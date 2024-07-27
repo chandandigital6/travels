@@ -511,10 +511,11 @@
                         </div>
                         <div class="row bg-primary rounded-bottom mx-0">
                             <div class="col-6 text-start px-0">
-                                <a href="#" class="btn-hover btn text-white py-2 px-4">Read More</a>
+                                <a href="{{route('packages')}}" class="btn-hover btn text-white py-2 px-4">Read More</a>
                             </div>
                             <div class="col-6 text-end px-0">
-                                <a href="#" class="btn-hover btn text-white py-2 px-4">Book Now</a>
+                                <a href="#" class="btn-hover btn text-white py-2 px-4" data-bs-toggle="modal"
+                                   data-bs-target="#bookingModal">Book Now</a>
                             </div>
                         </div>
                     </div>
@@ -940,4 +941,53 @@
         </div>
     </div>
     <!-- Subscribe End -->
+
+
+
+
+
+
+   <div class="modal fade" id="bookingModal" tabindex="-1" aria-labelledby="bookingModalLabel" aria-hidden="true">
+       <div class="modal-dialog">
+           <div class="modal-content"
+                style="background-image: url('{{ asset('asset/img/blog-1.jpg') }}'); background-size: cover; background-repeat: no-repeat; color: white;">
+               <div class="modal-header" style="background: rgba(0, 0, 0, 0.7);">
+                   <h5 class="modal-title text-white" id="bookingModalLabel">Travel Booking Form</h5>
+                   <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                           aria-label="Close"></button>
+               </div>
+               <div class="modal-body" style="background: rgba(0, 0, 0, 0.7);">
+                   <form action="{{ route('appointment.store') }}" method="POST">
+                       @csrf
+                       <div class="mb-3">
+                           <label for="name" class="form-label">Name</label>
+                           <input type="text" class="form-control" id="name" name="name" required>
+                       </div>
+                       <div class="mb-3">
+                           <label for="email" class="form-label">Email</label>
+                           <input type="email" class="form-control" id="email" name="email" required>
+                       </div>
+                       <div class="mb-3">
+                           <label for="mobile" class="form-label">Mobile No</label>
+                           <input type="tel" class="form-control" id="number" name="number" required>
+                       </div>
+                       <div class="mb-3">
+                           <label for="destination" class="form-label">Destination</label>
+                           <input type="text" class="form-control" id="destination" name="destination" required>
+                       </div>
+                       <div class="mb-3">
+                           <label for="date" class="form-label">Travel Date</label>
+                           <input type="date" class="form-control" id="travel_date" name="travel_date" required>
+                       </div>
+                       <div class="mb-3">
+                           <label for="guests" class="form-label">Number of Guests</label>
+                           <input type="number" class="form-control" id="guest" name="guest" required>
+                       </div>
+                       <button type="submit" class="btn btn-primary w-100">Book Now</button>
+                   </form>
+               </div>
+           </div>
+       </div>
+   </div>
+
 @endsection
