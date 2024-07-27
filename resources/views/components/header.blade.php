@@ -79,6 +79,8 @@
                 <div class="nav-item dropdown">
                     <a href="{{ route('destination') }}" class="nav-link dropdown-toggle {{ request()->routeIs('destination') ? 'active' : '' }}" data-bs-toggle="dropdown">Destinations</a>
                     <div class="dropdown-menu m-0">
+                        <a href="{{ route('destination') }}" class="dropdown-item {{ request()->routeIs('india') ? 'active' : '' }}"> Destinations</a>
+
                         <a href="{{ route('india') }}" class="dropdown-item {{ request()->routeIs('india') ? 'active' : '' }}">India Destinations</a>
                         <a href="#" class="dropdown-item {{ request()->routeIs('london') ? 'active' : '' }}">London Itinerary</a>
                         <a href="#" class="dropdown-item {{ request()->routeIs('italy') ? 'active' : '' }}">Italy Itinerary</a>

@@ -13,4 +13,12 @@ class State extends Model
     {
         return $this->belongsTo(Destination::class,'destination_id');
     }
+
+
+    public function stateContents()
+    {
+        return $this->belongsTo(StateContent::class,'state_id');
+    }
+
+
 }

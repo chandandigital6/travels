@@ -10,6 +10,8 @@ use App\Models\ClientLogo;
 use App\Models\Destination;
 use App\Models\Packages;
 use App\Models\Service;
+use App\Models\State;
+use App\Models\StateContent;
 use App\Models\Testimonial;
 use Illuminate\Http\Request;
 
@@ -63,7 +65,43 @@ class HomeController extends Controller
 
     public function destination()
     {
-        return view('front_pages.destination');
+        $destinations=Destination::with('states')->get();
+        return view('front_pages.destination',compact('destinations'));
+    }
+
+
+    public function show($title)
+    {
+
+        $state = State::where('title', $title)->first();
+
+//        if (!$state) {
+//            dd('State not found');
+//        }
+
+        $stateContents = StateContent::where('state_id', $state->id)->get();
+
+//        dd($stateContents);
+
+//        // You can also eager load the state relationship if needed
+//        $stateContents = StateContent::with('states')->where('state_id', $state->id)->get();
+//
+//        dd($stateContents);
+        $state = State::with('stateContents')
+            ->where('title', $title)
+            ->first();
+
+//        dd($state);
+        $destinations=Destination::with('states')->get();
+        return view('front_pages.details',compact('destinations','stateContents','state'));
+    }
+
+
+    public function india()
+    {
+        $destinations = Destination::with('states')->where('name', 'india')->get();
+//        dd($destinations);
+        return view('front_pages.india',compact('destinations'));
     }
 
     public function tour()
@@ -140,10 +178,7 @@ class HomeController extends Controller
         return view('front_pages.rajasthan');
     }
 
-    public function india()
-    {
-        return view('front_pages.india');
-    }
+
 
     public function legalnotice()
     {

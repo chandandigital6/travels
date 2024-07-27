@@ -20,23 +20,25 @@
                                        <h1 class="display-4 text-capitalize text-white mb-2 mb-md-4">{{ $banner->sub_title }}</h1>
                                        <p class="mb-3 mb-md-5 d-none d-sm-block">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,</p>
                                        <div class="container-fluid px-0">
-                                           <form>
+                                           <form action="{{ route('bookClient.store') }}" method="post" enctype="multipart/form-data">
+                                               @csrf
                                                <div class="row g-2 g-md-3">
                                                    <div class="col-12 col-sm-6 col-md-3">
-                                                       <input type="text" class="form-control" placeholder="Your Name">
+                                                       <input type="text" class="form-control" name="name" placeholder="Your Name">
                                                    </div>
                                                    <div class="col-12 col-sm-6 col-md-3">
-                                                       <input type="text" class="form-control" placeholder="Phone Number">
+                                                       <input type="number" class="form-control" name="number" placeholder="Phone Number">
                                                    </div>
                                                    <div class="col-12 col-sm-6 col-md-3">
-                                                       <input type="text" class="form-control" placeholder="Client id">
+                                                       <input type="text" class="form-control" name="client_id" placeholder="Client ID">
                                                    </div>
                                                    <div class="col-12 col-sm-6 col-md-3">
-                                                       <button type="button" class="btn btn-primary w-100">BOOK NOW</button>
+                                                       <button type="submit" class="btn btn-primary w-100">BOOK NOW</button>
                                                    </div>
                                                </div>
                                            </form>
                                        </div>
+
                                    </div>
                                </div>
                            </div>
@@ -44,14 +46,14 @@
                    </div>
                @endforeach
            </div>
-           <button class="carousel-control-prev" type="button" data-bs-target="#carouselId" data-bs-slide="prev">
-               <span class="carousel-control-prev-icon btn bg-primary" aria-hidden="true"></span>
-               <span class="visually-hidden">Previous</span>
-           </button>
-           <button class="carousel-control-next" type="button" data-bs-target="#carouselId" data-bs-slide="next">
-               <span class="carousel-control-next-icon btn bg-primary" aria-hidden="true"></span>
-               <span class="visually-hidden">Next</span>
-           </button>
+{{--           <button class="carousel-control-prev" type="button" data-bs-target="#carouselId" data-bs-slide="prev">--}}
+{{--               <span class="carousel-control-prev-icon btn bg-primary" aria-hidden="true"></span>--}}
+{{--               <span class="visually-hidden">Previous</span>--}}
+{{--           </button>--}}
+{{--           <button class="carousel-control-next" type="button" data-bs-target="#carouselId" data-bs-slide="next">--}}
+{{--               <span class="carousel-control-next-icon btn bg-primary" aria-hidden="true"></span>--}}
+{{--               <span class="visually-hidden">Next</span>--}}
+{{--           </button>--}}
        </div>
    </div>
 
@@ -137,7 +139,7 @@
             <div class="row g-4">
                 <div class="col-lg-6">
                     <div class="row g-4">
-                        @foreach($services->take(4) as $service)
+                        @foreach($services->take(2) as $service)
 
 
                         <div class="col-12">
@@ -160,7 +162,7 @@
                 </div>
                 <div class="col-lg-6">
                     <div class="row g-4">
-                        @foreach($services->skip(4) as $service)
+                        @foreach($services->skip(2)->take(2) as $service)
                         <div class="col-12">
                             <div
                                 class="service-content-inner d-flex align-items-center bg-white border border-primary rounded p-4 ps-0">
@@ -639,42 +641,40 @@
                     <h1 class="text-white mb-3">Book A Tour Deals</h1>
                     <p class="text-white mb-4">Get <span class="text-warning">50% Off</span> On Your First Adventure
                         Trip With. Get More Deal Offers Here.</p>
-                    <form>
+                    <form method="post" action="{{route('bookTable.store')}}">
+                        @csrf
                         <div class="row g-3">
                             <div class="col-md-6">
                                 <div class="form-floating">
-                                    <input type="text" class="form-control bg-white border-0" id="name"
-                                        placeholder="Your Name">
+                                    <input type="text" class="form-control bg-white border-0" id="name" name="name" placeholder="Your Name">
                                     <label for="name">Your Name</label>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-floating">
-                                    <input type="email" class="form-control bg-white border-0" id="email"
-                                        placeholder="Your Email">
+                                    <input type="email" class="form-control bg-white border-0" id="email" name="email" placeholder="Your Email">
                                     <label for="email">Your Email</label>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-floating date" id="date3" data-target-input="nearest">
-                                    <input type="text" class="form-control bg-white border-0" id="datetime"
-                                        placeholder="Date & Time" data-target="#date3" data-toggle="datetimepicker" />
+                                    <input type="text" class="form-control bg-white border-0" id="datetime" name="date_time" placeholder="Date & Time" data-target="#date3" data-toggle="datetimepicker" />
                                     <label for="datetime">Date & Time</label>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-floating">
-                                    <select class="form-select bg-white border-0" id="select1">
-                                        <option value="1">Destination 1</option>
-                                        <option value="2">Destination 2</option>
-                                        <option value="3">Destination 3</option>
+                                    <select class="form-select bg-white border-0" id="select1" name="destination">
+                                        <option value="Destination 1">Destination 1</option>
+                                        <option value="Destination 2">Destination 2</option>
+                                        <option value="Destination 3">Destination 3</option>
                                     </select>
                                     <label for="select1">Destination</label>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-floating">
-                                    <select class="form-select bg-white border-0" id="SelectPerson">
+                                    <select class="form-select bg-white border-0" id="SelectPerson" name="person">
                                         <option value="1">Persons 1</option>
                                         <option value="2">Persons 2</option>
                                         <option value="3">Persons 3</option>
@@ -684,10 +684,10 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="form-floating">
-                                    <select class="form-select bg-white border-0" id="CategoriesSelect">
-                                        <option value="1">Kids</option>
-                                        <option value="2">1</option>
-                                        <option value="3">2</option>
+                                    <select class="form-select bg-white border-0" id="CategoriesSelect" name="categories">
+                                        <option value="Kids">Kids</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
                                         <option value="3">3</option>
                                     </select>
                                     <label for="CategoriesSelect">Categories</label>
@@ -695,17 +695,16 @@
                             </div>
                             <div class="col-12">
                                 <div class="form-floating">
-                                    <textarea class="form-control bg-white border-0" placeholder="Special Request" id="message"
-                                        style="height: 100px"></textarea>
+                                    <textarea class="form-control bg-white border-0" placeholder="Special Request" id="message" name="msg" style="height: 100px"></textarea>
                                     <label for="message">Special Request</label>
                                 </div>
                             </div>
                             <div class="col-12">
-                                <button class="btn btn-primary text-white w-100 py-3" type="submit">Book
-                                    Now</button>
+                                <button class="btn btn-primary text-white w-100 py-3" type="submit">Book Now</button>
                             </div>
                         </div>
                     </form>
+
                 </div>
             </div>
         </div>
@@ -841,7 +840,7 @@
                 </p>
             </div>
             <div class="row g-4 justify-content-center">
-                @foreach($blogs as $blog)
+                @foreach($blogs->take(3) as $blog)
 
 
                 <div class="col-lg-4 col-md-6">
@@ -865,7 +864,7 @@
                         </div>
                         <div class="blog-content border border-top-0 rounded-bottom p-4">
                             <p class="mb-3">Posted By: {{$blog->author_name}} </p>
-                            <a href="#" class="h4">{{$blog->categorie}}</a>
+                            <a href="#" class="h4">{{$blog->title}}</a>
                             <p class="my-3">
                              {{$blog->short_description}}
                             </p>

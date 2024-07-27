@@ -6,6 +6,8 @@ use App\Http\Controllers\AppointmentController;
 use App\Http\Controllers\BannerController;
 
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\BookClientController;
+use App\Http\Controllers\BookTabaleController;
 use App\Http\Controllers\ChooseController;
 use App\Http\Controllers\ClientController;
 use App\Http\Controllers\CounterController;
@@ -20,9 +22,11 @@ use App\Http\Controllers\ServiceGalleryController;
 use App\Http\Controllers\ServiceHeaderController;
 use App\Http\Controllers\ServiceTitleController;
 use App\Http\Controllers\ServiceVideoController;
+use App\Http\Controllers\StateContentControler;
 use App\Http\Controllers\StateController;
 use App\Http\Controllers\TeamController;
 use App\Http\Controllers\TestimonialController;
+use App\Http\Requests\StateContentRequest;
 use App\Models\Blog;
 use App\Models\Seo;
 use Illuminate\Support\Facades\Artisan;
@@ -47,6 +51,7 @@ Route::get('/packages', [HomeController::class, 'packages'])->name('packages');
 Route::get('/blog', [HomeController::class, 'blog'])->name('blog');
 Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
 Route::get('/destination', [HomeController::class, 'destination'])->name('destination');
+Route::get('/destinationDetails/{title}', [HomeController::class, 'show'])->name('destination-details');
 Route::get('/tour', [HomeController::class, 'tour'])->name('tour');
 Route::get('/booking', [HomeController::class, 'booking'])->name('booking');
 Route::get('/gallery', [HomeController::class, 'gallery'])->name('gallery');
@@ -116,6 +121,8 @@ Route::post('store-password',[AuthController::class,'store_password'])->name('st
 Route::get('/change-password', [AuthController::class, 'showChangePasswordForm'])->name('auth.change-password-form');
 Route::post('/update-password', [AuthController::class, 'updatePassword'])->name('auth.update-password');
 
+Route::post('bookTable/store',[BookTabaleController::class,'store'])->name('bookTable.store');
+Route::post('bookClient/store',[BookClientController::class,'store'])->name('bookClient.store');
 
 Route::post('appointment/store',[AppointmentController::class,'store'])->name('appointment.store');
 Route::post('appointment/image',[AppointmentController::class,'image'])->name('appointment.image');
@@ -154,6 +161,26 @@ Route::group(['middleware' => ['auth']],function (){
     Route::get('appointment/delete/{appointment}',[AppointmentController::class,'delete'])->name('appointment.delete');
     Route::get('appointment/duplicate/{appointment}',[AppointmentController::class,'duplicate'])->name('appointment.duplicate');
 
+    //book
+
+
+    Route::get('bookTable/index',[BookTabaleController::class,'index'])->name('bookTable.index');
+    Route::get('bookTable/create',[BookTabaleController::class,'create'])->name('bookTable.create');
+    Route::get('bookTable/edit/{bookTable}',[BookTabaleController::class,'edit'])->name('bookTable.edit');
+    Route::post('bookTable/update/{bookTable}',[BookTabaleController::class,'update'])->name('bookTable.update');
+    Route::get('bookTable/delete/{bookTable}',[BookTabaleController::class,'delete'])->name('bookTable.delete');
+    Route::get('bookTable/duplicate/{bookTable}',[BookTabaleController::class,'duplicate'])->name('bookTable.duplicate');
+
+
+    //book
+
+
+    Route::get('bookClient/index',[BookClientController::class,'index'])->name('bookClient.index');
+    Route::get('bookClient/create',[BookClientController::class,'create'])->name('bookClient.create');
+    Route::get('bookClient/edit/{bookClient}',[BookClientController::class,'edit'])->name('bookClient.edit');
+    Route::post('bookClient/update/{bookClient}',[BookClientController::class,'update'])->name('bookClient.update');
+    Route::get('bookClient/delete/{bookClient}',[BookClientController::class,'delete'])->name('bookClient.delete');
+    Route::get('bookClient/duplicate/{bookClient}',[BookClientController::class,'duplicate'])->name('bookClient.duplicate');
 
     //services
 
@@ -308,6 +335,15 @@ Route::group(['middleware' => ['auth']],function (){
     Route::get('packages/duplicate/{packages}',[PackageController::class,'duplicate'])->name('packages.duplicate');
 
 
+    //content
+
+    Route::get('stateContent/index',[StateContentControler::class,'index'])->name('stateContent.index');
+    Route::get('stateContent/create',[StateContentControler::class,'create'])->name('stateContent.create');
+    Route::post('stateContent/store',[StateContentControler::class,'store'])->name('stateContent.store');
+    Route::get('stateContent/edit/{stateContent}',[StateContentControler::class,'edit'])->name('stateContent.edit');
+    Route::post('stateContent/update/{stateContent}',[StateContentControler::class,'update'])->name('stateContent.update');
+    Route::get('stateContent/delete/{stateContent}',[StateContentControler::class,'delete'])->name('stateContent.delete');
+    Route::get('stateContent/duplicate/{stateContent}',[StateContentControler::class,'duplicate'])->name('stateContent.duplicate');
 
 });
 

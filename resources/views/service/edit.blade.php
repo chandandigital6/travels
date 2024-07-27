@@ -51,14 +51,14 @@
             </div>
 
 
-            <div class="form-group">
-                <label for="image">ServiceImage</label>
-                <input type="file" name="service_image" class="form-control-file" id="service_image">
-                @if($service->image)
-                    <img src="{{asset('storage/'.$service->service_image)}}" alt="" width="200px">
-                @else
-                    no image
-                @endif
+{{--            <div class="form-group">--}}
+{{--                <label for="image">ServiceImage</label>--}}
+{{--                <input type="file" name="service_image" class="form-control-file" id="service_image">--}}
+{{--                @if($service->image)--}}
+{{--                    <img src="{{asset('storage/'.$service->service_image)}}" alt="" width="200px">--}}
+{{--                @else--}}
+{{--                    no image--}}
+{{--                @endif--}}
 {{--                @error('image')--}}
 {{--                @error('image')--}}
 {{--                <small class="text-danger">{{ $message }}</small>--}}

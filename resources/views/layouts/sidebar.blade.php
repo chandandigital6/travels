@@ -42,6 +42,12 @@
                     </a>
                 </li>
                 <li class="nav-item">
+                    <a href="{{route('service.index')}}" class="nav-link">
+                        <i class="nav-icon fa fa-bullseye"></i>
+                        <p>Our Services</p>
+                    </a>
+                </li>
+                <li class="nav-item">
                     <a href="{{route('packages.index')}}" class="nav-link">
                         <i class="nav-icon fa fa-fax"></i>
                         <p>Packages</p>
@@ -59,12 +65,7 @@
 {{--                        <p>Services Title</p>--}}
 {{--                    </a>--}}
 {{--                </li>--}}
-                <li class="nav-item">
-                    <a href="{{route('service.index')}}" class="nav-link">
-                        <i class="nav-icon fa fa-bullseye"></i>
-                        <p>Our Services</p>
-                    </a>
-                </li>
+
 
                 <li class="nav-item">
                     <a href="{{route('logo.index')}}" class="nav-link">
@@ -87,6 +88,13 @@
                 </li>
 
                 <li class="nav-item">
+                    <a href="{{route('stateContent.index')}}" class="nav-link">
+                        <i class="nav-icon fa fa-bug"></i>
+                        <p>StatesContent</p>
+                    </a>
+                </li>
+
+                <li class="nav-item">
                     <a href="{{route('testimonial.index')}}" class="nav-link">
                         <i class="nav-icon fa fa-fax"></i>
                         <p>Testimonials</p>
@@ -96,6 +104,18 @@
                     <a href="{{route('appointment.index')}}" class="nav-link">
                         <i class="nav-icon fa fa-american-sign-language-interpreting"></i>
                         <p>Appointment</p>
+                    </a>
+
+                <li class="nav-item">
+                    <a href="{{route('bookTable.index')}}" class="nav-link">
+                        <i class="nav-icon fa fa-american-sign-language-interpreting"></i>
+                        <p>BookTable</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{route('bookClient.index')}}" class="nav-link">
+                        <i class="nav-icon fa fa-american-sign-language-interpreting"></i>
+                        <p>BookClientsId</p>
                     </a>
                 </li>
                 <li class="nav-item">

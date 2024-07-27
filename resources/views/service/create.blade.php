@@ -45,13 +45,13 @@
                 @enderror
             </div>
 
-            <div class="form-group">
-                <label for="image">ServiceImage</label>
-                <input type="file" name="service_image" class="form-control-file" id="service_image">
-                @error('image')
-                <small class="text-danger">{{ $message }}</small>
-                @enderror
-            </div>
+{{--            <div class="form-group">--}}
+{{--                <label for="image">ServiceImage</label>--}}
+{{--                <input type="file" name="service_image" class="form-control-file" id="service_image">--}}
+{{--                @error('image')--}}
+{{--                <small class="text-danger">{{ $message }}</small>--}}
+{{--                @enderror--}}
+{{--            </div>--}}
             <div class="form-group">
                 <label for="status">Status</label>
                 <select id="status" name="status" class="form-control @error('status') is-invalid @enderror">
