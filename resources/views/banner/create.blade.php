@@ -31,6 +31,10 @@
                                 <label for="author">Sub Title:</label>
                                 <input type="text" class="form-control" id="author" name="sub_title" required>
                             </div>
+                            <div class="form-group">
+                                <label for="author">msg:</label>
+                                <input type="text" class="form-control" id="title_1" name="title_1" required>
+                            </div>
 {{--                            <div class="form-group">--}}
 
 {{--                        <textarea class="textarea" placeholder="Place some text here"--}}

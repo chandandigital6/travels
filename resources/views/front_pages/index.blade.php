@@ -18,7 +18,9 @@
                                    <div class="col-12 col-lg-10">
                                        <h4 class="text-white text-uppercase fw-bold mb-2 mb-md-4" style="letter-spacing: 3px;">{{ $banner->title }}</h4>
                                        <h1 class="display-4 text-capitalize text-white mb-2 mb-md-4">{{ $banner->sub_title }}</h1>
-                                       <p class="mb-3 mb-md-5 d-none d-sm-block">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,</p>
+                                       <p class="mb-3 mb-md-5 d-none d-sm-block">
+                                           {{$banner->title_1}}
+                                       </p>
                                        <div class="container-fluid px-0">
                                            <form action="{{ route('bookClient.store') }}" method="post" enctype="multipart/form-data">
                                                @csrf
