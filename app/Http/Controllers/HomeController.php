@@ -9,6 +9,7 @@ use App\Models\Blog;
 use App\Models\ClientLogo;
 use App\Models\Destination;
 use App\Models\Packages;
+use App\Models\Seo;
 use App\Models\Service;
 use App\Models\State;
 use App\Models\StateContent;
@@ -30,78 +31,92 @@ class HomeController extends Controller
         $services=Service::where('status',1)->get();
         $clientLogos = ClientLogo::all();
         $destinations=Destination::with('states')->get();
-        return view('front_pages.index',compact('banners','abouts','testimonials','blogs','packages','services','clientLogos','destinations'));
+        $seos = Seo::where('page', 'index')->get();
+        return view('front_pages.index',compact('banners','abouts','testimonials','blogs','packages','services','clientLogos','destinations','seos'));
     }
 
     public function about()
     {
         $abouts =About::all();
-        return view('front_pages.about',compact('abouts'));
+        $seos = Seo::where('page', 'about')->get();
+        return view('front_pages.about',compact('abouts','seos'));
     }
 
     public function services()
     {
         $services=Service::where('status',1)->get();
         $testimonials= Testimonial::all();
-        return view('front_pages.services',compact('services','testimonials'));
+        $seos = Seo::where('page', 'services')->get();
+        return view('front_pages.services',compact('services','testimonials','seos'));
     }
 
     public function packages()
     {
         $packages=Packages::where('status',1)->get();
-        return view('front_pages.packages',compact('packages'));
+        $seos = Seo::where('page', 'packages')->get();
+        return view('front_pages.packages',compact('packages','seos'));
     }
 
     public function blog()
     {
         $blogs =Blog::all();
-        return view('front_pages.blog',compact('blogs'));
+        $seos = Seo::where('page', 'blog')->get();
+        return view('front_pages.blog',compact('blogs','seos'));
     }
 
     public function contact()
     {
-        return view('front_pages.contact');
+        $seos = Seo::where('page', 'contact')->get();
+        return view('front_pages.contact',compact('seos'));
     }
 
     public function destination()
     {
         $destinations=Destination::with('states')->get();
-        return view('front_pages.destination',compact('destinations'));
+        $seos = Seo::where('page', 'destination')->get();
+        return view('front_pages.destination',compact('destinations','seos'));
     }
 
 
     public function show($title)
     {
+        // Retrieve the state by its title
+        $state = State::where('title', $title)->firstOrFail();
 
-        $state = State::where('title', $title)->first();
-
-//        if (!$state) {
-//            dd('State not found');
-//        }
-
+        // Retrieve state contents
         $stateContents = StateContent::where('state_id', $state->id)->get();
 
-//        dd($stateContents);
+        // Retrieve the SEO entries for the state
+        $seos = Seo::where('state_id', $state->id)->get();
+//      dd($seos);
+        // Retrieve destinations with their associated states
+        $destinations = Destination::with('states')->get();
 
-//        // You can also eager load the state relationship if needed
-//        $stateContents = StateContent::with('states')->where('state_id', $state->id)->get();
-//
-//        dd($stateContents);
-        $state = State::with('stateContents')
-            ->where('title', $title)
-            ->first();
-
-//        dd($state);
-        $destinations=Destination::with('states')->get();
-        return view('front_pages.details',compact('destinations','stateContents','state'));
+        // Return the view with the retrieved data
+        return view('front_pages.details', compact('destinations', 'stateContents', 'state', 'seos'));
     }
+
+
+
+
+    public function showDestinationDetails($stateTitle, $destinationName)
+    {
+        $state = State::where('title', $stateTitle)->firstOrFail();
+        $destination = Destination::where('name', $destinationName)->where('state_id', $state->id)->firstOrFail();
+
+        // Pass the data to the view as needed
+        return view('front_pages.destination_details', compact('state', 'destination'));
+    }
+
 
 
     public function india()
     {
         $destinations = Destination::with('states')->where('name', 'india')->get();
 //        dd($destinations);
-        return view('front_pages.india',compact('destinations'));
+
+        $seos = Seo::where('page', 'destination')->get();
+        return view('front_pages.india',compact('destinations','seos'));
     }
 
     public function tour()
@@ -118,7 +133,8 @@ class HomeController extends Controller
 
     {
         $clientLogos = ClientLogo::all();
-        return view('front_pages.gallery',compact('clientLogos'));
+        $seos = Seo::where('page', 'gallery')->get();
+        return view('front_pages.gallery',compact('clientLogos','seos'));
     }
 
     public function guides()
@@ -130,7 +146,8 @@ class HomeController extends Controller
 
     {
         $testimonials= Testimonial::all();
-        return view('front_pages.testimonial',compact('testimonials'));
+        $seos = Seo::where('page', 'testimonial')->get();
+        return view('front_pages.testimonial',compact('testimonials','seos'));
     }
 
     public function page404()
@@ -140,37 +157,44 @@ class HomeController extends Controller
 
     public function login()
     {
+        $seos = Seo::where('page', 'login')->get();
         return view('front_pages.login');
     }
 
     public function register()
     {
-        return view('front_pages.register');
+        $seos = Seo::where('page', 'register')->get();
+        return view('front_pages.register',compact('seos'));
     }
 
     public function myprofile()
     {
-        return view('front_pages.myprofile');
+        $seos = Seo::where('page', 'myprofile')->get();
+        return view('front_pages.myprofile',compact('seos'));
     }
 
     public function inbox()
     {
-        return view('front_pages.inbox');
+        $seos = Seo::where('page', 'inbox')->get();
+        return view('front_pages.inbox',compact('seos'));
     }
 
     public function notifications()
     {
-        return view('front_pages.notifications');
+        $seos = Seo::where('page', 'notifications')->get();
+        return view('front_pages.notifications',compact('seos'));
     }
 
     public function accountsetting()
     {
-        return view('front_pages.accountsetting');
+        $seos = Seo::where('page', 'accountsetting')->get();
+        return view('front_pages.accountsetting',compact('seos'));
     }
 
     public function kashmir()
     {
-        return view('front_pages.kashmir');
+        $seos = Seo::where('page', 'kashmir')->get();
+        return view('front_pages.kashmir',compact('seos'));
     }
 
     public function rajasthan()
@@ -182,34 +206,36 @@ class HomeController extends Controller
 
     public function legalnotice()
     {
-        return view('front_pages.legalnotice');
+        $seos = Seo::where('page', 'legalnotice')->get();
+        return view('front_pages.legalnotice',compact('seos'));
     }
 
     public function privacypolicy()
     {
-        return view('front_pages.privacypolicy');
+        $seos = Seo::where('page', 'privacypolicy')->get();
+        return view('front_pages.privacypolicy',compact('seos'));
     }
 
     public function termsconditon()
     {
-        return view('front_pages.termsconditon');
+        $seos = Seo::where('page', 'termsconditon')->get();
+        return view('front_pages.termsconditon',compact('seos'));
     }
 
     public function cookiepolicy()
     {
-        return view('front_pages.cookiepolicy');
+        $seos = Seo::where('page', 'cookiepolicy')->get();
+
+        return view('front_pages.cookiepolicy',compact('seos'));
     }
 
     public function thanks()
     {
-        return view('front_pages.thanks');
+        $seos = Seo::where('page', 'thanks')->get();
+        return view('front_pages.thanks',compact('seos'));
     }
 
 
-    public function showDestination($slug)
-    {
-        $destination = Destination::where('slug', $slug)->firstOrFail();
-        return view('components.header', compact('destination'));
-    }
+
 
 }

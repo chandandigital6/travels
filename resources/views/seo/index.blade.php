@@ -48,7 +48,7 @@
                                     <th>ID</th>
                                     <th>Title</th>
                                     <th>Description</th>
-                                    <th>Service Name</th>
+                                    <th>State Name</th>
 
                                     <th>Action</th>
                                 </tr>
@@ -60,7 +60,8 @@
 
                                         <td>{{ $seo->title }}</td>
                                         <td>{{ $seo->description }}</td>
-                                        <td>{{ $seo->service ? $seo->service->title : 'n/a' }}</td>
+                                        <td>{{ $seo->state->title }}</td>
+
 
 
                                         <td>

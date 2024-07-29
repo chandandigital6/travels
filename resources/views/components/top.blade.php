@@ -36,10 +36,10 @@
                     <div class="dropdown-menu rounded">
                         <a href="{{ route('myprofile') }}" class="dropdown-item"><i class="fas fa-user-alt me-2"></i> My
                             Profile</a>
-                        <a href="{{ route('inbox') }}" class="dropdown-item"><i class="fas fa-comment-alt me-2"></i>
-                            Inbox</a>
-                        <a href="{{ route('notifications') }}" class="dropdown-item"><i class="fas fa-bell me-2"></i> Notifications</a>
-                        <a href="{{ route('accountsetting') }}" class="dropdown-item"><i class="fas fa-cog me-2"></i> Account Settings</a>
+{{--                        <a href="{{ route('inbox') }}" class="dropdown-item"><i class="fas fa-comment-alt me-2"></i>--}}
+{{--                            Inbox</a>--}}
+{{--                        <a href="{{ route('notifications') }}" class="dropdown-item"><i class="fas fa-bell me-2"></i> Notifications</a>--}}
+{{--                        <a href="{{ route('accountsetting') }}" class="dropdown-item"><i class="fas fa-cog me-2"></i> Account Settings</a>--}}
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                             @csrf
                         </form>

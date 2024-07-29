@@ -57,7 +57,7 @@
                                     <tr>
                                         <td>{{ $testimonial->id }}</td>
                                         <td>{{ $testimonial->name }}</td>
-                                        <td>{{$testimonial->msg}}</td>
+                                        <td>{!! $testimonial->msg !!}</td>
 
                                         <td><img src="{{ asset('storage/'.$testimonial->image) }}" alt="{{ $testimonial->name }}" style="max-width: 100px;"></td>
                                         <td>

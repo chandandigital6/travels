@@ -86,7 +86,7 @@
                         <label for="">Select Page</label>
                         <select name="page" class="form-control" id="">
                             <option value="">select page</option>
-                            @foreach(['about-us', 'blog', 'contact-us','index','services' ] as $page)
+                            @foreach(['about', 'blog', 'contact','index','services','packages','destination','gallery','testimonial' ] as $page)
 
                                 <option value="{{ $page }}" {{ $seo->page == $page ? 'selected' : '' }}>{{ $page }}</option>
                             @endforeach
@@ -98,13 +98,13 @@
                     </div>
                     <div class="form-group">
                         <label for="service_id">Service</label>
-                        <select name="service_id" class="form-control @error('service_id') is-invalid @enderror">
+                        <select name="state_id" class="form-control @error('state_id') is-invalid @enderror">
                             <option value="">select</option>
-                            @foreach($services as $service)
-                                <option value="{{ $service->id }}" {{ $seo->service_id == $service->id ? 'selected' : '' }}>{{ $service->title }}</option>
+                            @foreach($states as $state)
+                                <option value="{{ $state->id }}" {{ $seo->state_id == $state->id ? 'selected' : '' }}>{{ $state->title }}</option>
                             @endforeach
                         </select>
-                        @error('service_id')
+                        @error('state_id')
                         <div class="invalid-feedback">{{ $message }}</div>
                         @enderror
                     </div>

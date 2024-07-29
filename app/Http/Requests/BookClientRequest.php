@@ -23,7 +23,7 @@ class BookClientRequest extends FormRequest
     {
         return [
             'name' => 'nullable|string|max:255',
-            'number' => 'required',
+            'phone_n' => 'required',
             'client_id' => 'nullable|string|max:255',
         ];
     }

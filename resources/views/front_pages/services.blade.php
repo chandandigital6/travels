@@ -1,4 +1,4 @@
-@extends('components.main')
+@extends('components.main',['seos' => $seos])
 @section('content')
     <!-- Header Start -->
     <div class="container-fluid bg-breadcrumb">

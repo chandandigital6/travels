@@ -21,4 +21,10 @@ class State extends Model
     }
 
 
+    public function seo()
+    {
+        return $this->belongsTo(Seo::class,'state_id');
+    }
+
+
 }

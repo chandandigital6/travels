@@ -10,8 +10,8 @@ class Seo extends Model
     use HasFactory;
     protected $guarded=['id'];
 
-    public function service()
+    public function state()
     {
-        return $this->belongsTo(Service::class);
+        return $this->belongsTo(State::class);
     }
 }

@@ -1,4 +1,4 @@
-@extends('components.main')
+@extends('components.main',['seos' => $seos])
 @section('content')
     <!-- Header Start -->
     <div class="container-fluid bg-breadcrumb">
@@ -36,17 +36,17 @@
                             </div>
                         @endif
                         <div class="mb-5 text-center">
-                            <img src="{{ Auth::user()->profile_image ?? 'default-profile.png' }}" alt="Profile Picture"
-                                class="rounded-circle mb-3" style="width: 150px; height: 150px;">
+{{--                            <img src="{{ Auth::user()->profile_image ?? 'default-profile.png' }}" alt="Profile Picture"--}}
+{{--                                class="rounded-circle mb-3" style="width: 150px; height: 150px;">--}}
                             <h3>{{ Auth::user()->name }}</h3>
                             <p class="text-muted">{{ Auth::user()->email }}</p>
                         </div>
                         <form method="POST" action="{{ route('profile.update') }}" enctype="multipart/form-data">
                             @csrf
-                            <div class="mb-4">
-                                <label for="profile_image" class="form-label">Profile Image</label>
-                                <input type="file" class="form-control" id="profile_image" name="profile_image">
-                            </div>
+{{--                            <div class="mb-4">--}}
+{{--                                <label for="profile_image" class="form-label">Profile Image</label>--}}
+{{--                                <input type="file" class="form-control" id="profile_image" name="profile_image">--}}
+{{--                            </div>--}}
                             <div class="mb-4">
                                 <label for="name" class="form-label">Full Name</label>
                                 <input type="text" class="form-control" id="name" name="name"

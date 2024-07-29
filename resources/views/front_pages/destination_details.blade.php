@@ -33,28 +33,28 @@
                 @foreach($stateContents as $content)
 
 
-                <div class="row mb-5">
-                    <div class="col-12">
-                        <div class="card shadow-lg border-0"
-                             style="transition: transform 0.3s ease-in-out; cursor: pointer; max-width: 800px; margin: auto; border-radius: 15px; overflow: hidden;"
-                             onmouseover="this.style.transform='translateY(-5px)'"
-                             onmouseout="this.style.transform='translateY(0)'">
-                            <div class="card-body p-4">
-                                <div class="d-flex align-items-center mb-3">
-                                    <i class="fas fa-map-marker-alt text-primary me-2" style="font-size: 1.5rem;"></i>
-                                    <div class="badge bg-primary text-white"
-                                         style="font-size: 1.25rem; padding: 0.5rem 1rem;">{{ $content->days }}</div>
+                    <div class="row mb-5">
+                        <div class="col-12">
+                            <div class="card shadow-lg border-0"
+                                 style="transition: transform 0.3s ease-in-out; cursor: pointer; max-width: 800px; margin: auto; border-radius: 15px; overflow: hidden;"
+                                 onmouseover="this.style.transform='translateY(-5px)'"
+                                 onmouseout="this.style.transform='translateY(0)'">
+                                <div class="card-body p-4">
+                                    <div class="d-flex align-items-center mb-3">
+                                        <i class="fas fa-map-marker-alt text-primary me-2" style="font-size: 1.5rem;"></i>
+                                        <div class="badge bg-primary text-white"
+                                             style="font-size: 1.25rem; padding: 0.5rem 1rem;">{{ $content->days }}</div>
+                                    </div>
+                                    <h2 class="card-title text-primary">
+                                        {{$content->title}}
+                                    </h2>
+                                    <p class="card-text">
+                                        {!! $content->description !!}
+                                    </p>
                                 </div>
-                                <h2 class="card-title text-primary">
-                                {{$content->title}}
-                                </h2>
-                                <p class="card-text">
-                                    {!! $content->description !!}
-                                </p>
                             </div>
                         </div>
                     </div>
-                </div>
 
                 @endforeach
 

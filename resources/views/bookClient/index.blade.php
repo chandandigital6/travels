@@ -55,7 +55,7 @@
                                     <tr>
                                         <td>{{ $bookClient->id }}</td>
                                         <td>{{ $bookClient->name }}</td>
-                                        <td>{{ $bookClient->number }}</td>
+                                        <td>{{ $bookClient->phone_n }}</td>
                                         <td>{{ $bookClient->client_id }}</td>
 
                                         <td>

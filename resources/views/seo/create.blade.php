@@ -89,11 +89,15 @@
                         <label for="seo">Select Page</label>
                         <select name="page" class="form-control" id="">
                             <option value="">select page</option>
-                            <option value="about-us">about-us</option>
+                            <option value="about">about-us</option>
                             <option value="blog">blog</option>
-                            <option value="contact-us">contact-us</option>
+                            <option value="contact">contact-us</option>
                             <option value="index">index</option>
                             <option value="services">services</option>
+                            <option value="packages">packages</option>
+                            <option value="destination">destination</option>
+                            <option value="gallery">gallery</option>
+                            <option value="testimonial">testimonial</option>
 
                         </select>
                     </div>
@@ -105,14 +109,15 @@
 
 
                     <div class="form-group">
-                        <label for="service_id">Service</label>
-                        <select name="service_id" class="form-control @error('service_id') is-invalid @enderror">
-                            @foreach($services as $service)
-                                <option value="">Select</option>
-                                <option value="{{ $service->id }}">{{ $service->title }}</option>
+                        <label for="service_id">State</label>
+                        <select name="state_id" class="form-control @error('state_id') is-invalid @enderror">
+                            <option value="">Select</option>
+                            @foreach($states as $state)
+
+                                <option value="{{ $state->id }}">{{ $state->title }}</option>
                             @endforeach
                         </select>
-                        @error('service_id')
+                        @error('state_id')
                         <div class="invalid-feedback">{{ $message }}</div>
                         @enderror
                     </div>

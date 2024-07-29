@@ -1,4 +1,4 @@
-@extends('components.main')
+@extends('components.main',['seos' => $seos])
 @section('content')
    <!-- Carousel Start -->
    <div class="carousel-header">
@@ -27,7 +27,7 @@
                                                        <input type="text" class="form-control" name="name" placeholder="Your Name">
                                                    </div>
                                                    <div class="col-12 col-sm-6 col-md-3">
-                                                       <input type="number" class="form-control" name="number" placeholder="Phone Number">
+                                                       <input type="number" class="form-control" name="phone_n" placeholder="Phone Number">
                                                    </div>
                                                    <div class="col-12 col-sm-6 col-md-3">
                                                        <input type="text" class="form-control" name="client_id" placeholder="Client ID">

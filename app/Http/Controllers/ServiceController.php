@@ -93,26 +93,24 @@ class ServiceController extends Controller
     public function show($title){
 //          dd($service);
 //        $logos=ClientLogo::all();
-        $service = Service::where('title', $title)->first();
+//        $service = Service::where('title', $title)->first();
 
-        $services=Service::where('status' ,1)->get();
-        $serviceHeader = ServiceHeader::where('service_id', $service->id)->get();
-        $serviceBefore = ServiceBefore::where('service_id', $service->id)->get();
+//        $services=Service::where('status' ,1)->get();
+//        $serviceHeader = ServiceHeader::where('service_id', $service->id)->get();
+//        $serviceBefore = ServiceBefore::where('service_id', $service->id)->get();
 //        dd($serviceBefore);
-        $serviceGallery = ServiceGallery::where('service_id', $service->id)
-         ->where('status', '1')
-            ->get();
+
 //     dd($serviceGallery);
-        $serviceVideo= ServiceVideo::where('service_id', $service->id)
-          ->where('status', '1')
-            ->get();
-        $serviceChooseUs=ServiceChoose::where('service_id', $service->id)
-           ->where('status', '1')
-            ->get();
+//        $serviceVideo= ServiceVideo::where('service_id', $service->id)
+//          ->where('status', '1')
+//            ->get();
+//        $serviceChooseUs=ServiceChoose::where('service_id', $service->id)
+//           ->where('status', '1')
+//            ->get();
 //        dd($chooseUs);
-        $testimonials=Testimonial::all();
-        $seos= Seo::where('service_id', $service->id)->get();
-        return view('front_end.servicesDetail',compact('service','serviceGallery','serviceChooseUs','services','serviceVideo','seos','testimonials','serviceHeader','serviceBefore'));
+//        $testimonials=Testimonial::all();
+//        $seos= Seo::where('service_id', $service->id)->get();
+        return view('front_end.servicesDetail');
     }
 
 }

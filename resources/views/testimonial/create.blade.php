@@ -19,7 +19,7 @@
 
                     <div class="form-group mb-3">
                         <label for="msg">Message</label>
-                        <textarea class="form-control @error('msg') is-invalid @enderror" id="msg" name="msg" rows="4">{{ old('msg') }}</textarea>
+                        <textarea class="form-control textarea @error('msg') is-invalid @enderror" id="msg" name="msg" rows="4">{{ old('msg') }}</textarea>
                         @error('msg')
                         <div class="invalid-feedback">
                             {{ $message }}

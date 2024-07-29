@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('days')->nullable();
             $table->string('title')->nullable();
-            $table->string('description')->nullable();
+            $table->text('description')->nullable();
             $table->enum('status',[1,0])->default(1);
             $table->foreignId('state_id')->nullable()->constrained('states')->onDelete('cascade');
 
@@ -23,7 +23,7 @@ return new class extends Migration
         });
     }
 
-    /**o c 
+    /**o c
      * Reverse the migrations.
      */
     public function down(): void

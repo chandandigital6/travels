@@ -37,7 +37,7 @@ class SeoRequest extends FormRequest
             'twitter_label2' => 'nullable|string',
             'twitter_data2' => 'nullable|string',
             'title'=>'nullable|string',
-            'service_id' => 'nullable|exists:services,id',
+            'state_id' => 'nullable|exists:states,id'
         ];
     }
 }

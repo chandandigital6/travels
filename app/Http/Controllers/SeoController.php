@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\SeoRequest;
 use App\Models\Service;
 use App\Models\Seo;
+use App\Models\State;
 use Illuminate\Http\Request;
 
 class SeoController extends Controller
@@ -22,8 +23,9 @@ class SeoController extends Controller
     }
 
     public function create(){
-        $services=Service::all();
-        return view('seo.create',compact('services'));
+//        $services=Service::all();
+        $states=State::all();
+        return view('seo.create',compact('states'));
     }
 
     public function store(SeoRequest $request){
@@ -37,8 +39,8 @@ class SeoController extends Controller
     }
 
     public function edit(Seo $seo){
-        $services=Service::all();
-        return view('seo.edit',compact('seo','services'));
+        $states=State::all();
+        return view('seo.edit',compact('seo','states'));
     }
 
     public function update(Seo $seo , SeoRequest $request){

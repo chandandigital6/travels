@@ -23,7 +23,7 @@ class TestimonialRequest extends FormRequest
     {
         return [
             'image' => 'nullable|image|max:2048', // Optional, must be an image, max size 2MB
-            'msg' => 'required|string|max:255', // Required, must be a string, max length 255 characters
+            'msg' => 'required', // Required, must be a string, max length 255 characters
             'name' => 'required|string|max:100', // Required, must be a string, max length 100 characters
 
         ];

@@ -1,4 +1,4 @@
-@extends('components.main')
+@extends('components.main',['seos' => $seos])
 
 @section('content')
     <div class="container-fluid p-0">
@@ -257,7 +257,7 @@
         <!-- Video Section -->
         <div class="container-fluid px-0">
             <div class="row g-0 mt-5 mb-5">
-                <div class="col-12 col-md-10 col-lg-12 mx-auto"> 
+                <div class="col-12 col-md-10 col-lg-12 mx-auto">
                     <h2 class="text-center mb-4">Watch Our Kashmir Journey</h2>
                     <div class="video-container">
                         <div class="ratio ratio-16x9">

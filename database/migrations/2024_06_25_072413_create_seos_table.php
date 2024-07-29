@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('seos', function (Blueprint $table) {
             $table->id();
-            $table->enum('page', ['about-us', 'blog', 'contact-us','index','services'])->nullable();
+            $table->enum('page', ['about', 'blog', 'contact','index','services','packages','destination','gallery','testimonial'])->nullable();
             $table->text('description')->nullable();
             $table->string('canonical')->nullable();
             $table->string('og_locale')->nullable();
@@ -30,7 +30,7 @@ return new class extends Migration
             $table->string('twitter_data2')->nullable();
             $table->string('title')->nullable();
             $table->text('schema_js')->nullable();
-            $table->foreignId('service_id')->nullable()->constrained('services')->onDelete('cascade');
+            $table->foreignId('state_id')->nullable()->constrained('states')->onDelete('cascade');
             $table->timestamps();
         });
     }
