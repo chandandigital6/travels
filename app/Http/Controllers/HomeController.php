@@ -235,7 +235,12 @@ class HomeController extends Controller
         return view('front_pages.thanks',compact('seos'));
     }
 
-
+   public function blogdetails(Blog $blog)
+{
+//    dd($blog);
+    $seos = Seo::where('page', 'blogdetails')->get();
+    return view('front_pages.blogdetails',compact('seos','blog'));
+}
 
 
 }

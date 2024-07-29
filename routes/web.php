@@ -51,6 +51,7 @@ Route::get('/about', [HomeController::class, 'about'])->name('about');
 Route::get('/services', [HomeController::class, 'services'])->name('services');
 Route::get('/packages', [HomeController::class, 'packages'])->name('packages');
 Route::get('/blog', [HomeController::class, 'blog'])->name('blog');
+Route::get('/blogdetails/{blog}', [HomeController::class, 'blogdetails'])->name('blogdetails');
 Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
 Route::get('/destination', [HomeController::class, 'destination'])->name('destination');
 Route::get('/destinationDetails/{title}', [HomeController::class, 'show'])->name('destination-details');

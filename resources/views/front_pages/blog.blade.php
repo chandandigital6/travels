@@ -53,7 +53,7 @@
                                 <p class="my-3">
                                     {{$blog->short_description}}
                                 </p>
-                                <a href="#" class="btn btn-primary rounded-pill py-2 px-4">Read More</a>
+                                <a href="{{route('blogdetails',$blog->id)}}" class="btn btn-primary rounded-pill py-2 px-4">Read More</a>
                             </div>
                         </div>
                     </div>
