@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('title')->nullable();
             $table->string('image')->nullable();
+            $table->string('banner')->nullable();
             $table->foreignId('destination_id')->nullable()->constrained('destinations')->onDelete('cascade');
             $table->enum('status',[1,0])->default(1);
             $table->timestamps();

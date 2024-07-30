@@ -4,7 +4,7 @@
     <div class="container-fluid p-0">
         <!-- Header Section -->
         <div class="position-relative">
-            <img src="{{ asset('storage/'.$state->image) }}" class="img-fluid w-100" alt="Kashmir Itinerary"
+            <img src="{{ asset('storage/'.$state->banner) }}" class="img-fluid w-100" alt="Kashmir Itinerary"
                  style="object-fit: cover; height: 80vh;">
             <div class="position-absolute top-50 start-50 translate-middle text-white text-center bg-dark bg-opacity-75 p-4 rounded"
                  style="font-family: 'Roboto', sans-serif;">

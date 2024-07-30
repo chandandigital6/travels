@@ -59,7 +59,7 @@
                                         <td>{{ $state->id }}</td>
                                         <td>{{ $state->title }}</td>
                                         <td><img src="{{ asset('storage/'.$state->image) }}" alt="{{ $state->title }}" style="max-width: 100px;"></td>
-                                        <td>{{ $state->destination->name }}</td>
+                                        <td>{{ $state->destination->name ?? 'N/A'}}</td>
                                         <td>{{$state->status == 1 ? 'active': "inactive"}}</td>
                                         <td>
                                             <a href="{{ route('state.edit', $state->id) }}" class="btn btn-primary">Edit</a>

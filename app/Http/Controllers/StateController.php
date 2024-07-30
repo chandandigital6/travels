@@ -30,15 +30,19 @@ class StateController extends Controller
         // Validate the request data
         $validatedData = $request->validated();
 
-        // Create the state entry
-        $state = State::create($validatedData);
+        // Handle image uploads
+        $imageFields = ['image', 'banner',];
 
-        // Check if an image file was uploaded
-        if ($request->hasFile('image')) {
-            $image = $request->file('image')->store('public/state');
-            $state->image = str_replace('public/', '', $image);
-            $state->save();
+        foreach ($imageFields as $field) {
+            if ($request->hasFile($field)) {
+                $imagePath = $request->file($field)->store('public/chose');
+                // Save the image path without 'public/' prefix
+                $validatedData[$field] = str_replace('public/', '', $imagePath);
+            }
         }
+
+        // Create the About model instance with the validated data
+        State::create($validatedData);
         return redirect()->route('state.index')->with('success', 'State  created successfully.');
     }
 
@@ -47,17 +51,26 @@ class StateController extends Controller
         return view('state.edit',compact('state','destinations'));
     }
 
-    public function update(State $state , StateRequest $request){
-        $stateData = $request->all();
+    public function update(State $state, StateRequest $request)
+    {
+        // Validate the request data
+        $validatedData = $request->validated();
 
-        if ($request->hasFile('image')) {
-            $imagePath = $request->file('image')->store('public/state');
-            $stateData['image'] = str_replace('public/', '', $imagePath);
+        // Handle image uploads
+        $imageFields = ['image', 'banner'];
+
+        foreach ($imageFields as $field) {
+            if ($request->hasFile($field)) {
+                $imagePath = $request->file($field)->store('public/state');
+                // Save the image path without 'public/' prefix
+                $validatedData[$field] = str_replace('public/', '', $imagePath);
+            }
         }
 
-        $state->update($stateData);
+        // Update the State model instance with the validated data
+        $state->update($validatedData);
 
-        return redirect()->route('state.index')->with('success', 'state item successfully updated');
+        return redirect()->route('state.index')->with('success', 'State item successfully updated.');
     }
 
 

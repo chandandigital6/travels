@@ -34,7 +34,13 @@
                                 <div class="text-danger">{{ $message }}</div>
                                 @enderror
                             </div>
-
+                            <div class="form-group">
+                                <label for="image">Image banner:</label>
+                                <input type="file" class="form-control" id="banner" name="banner">
+                                @error('image')
+                                <div class="text-danger">{{ $message }}</div>
+                                @enderror
+                            </div>
                             <div class="form-group">
                                 <label for="destination_id">Destination:</label>
                                 <select class="form-control" id="destination_id" name="destination_id">
