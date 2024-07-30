@@ -4,10 +4,12 @@
             <div class="col-md-6 col-lg-6 col-xl-3">
                 <div class="footer-item d-flex flex-column">
                     <h4 class="mb-4 text-white">Get In Touch</h4>
-                    <a href=""><i class="fas fa-home me-2"></i> 123 Street, New York, USA</a>
-                    <a href=""><i class="fas fa-envelope me-2"></i> info@example.com</a>
-                    <a href=""><i class="fas fa-phone me-2"></i> +012 345 67890</a>
-                    <a href="" class="mb-3"><i class="fas fa-print me-2"></i> +012 345 67890</a>
+                    <a href=""><i class="fas fa-home me-2"></i> Miran Tower <br>
+                        E331, Phase 8B, Industrial Area, Sector 74, Sahibzada Ajit Singh Nagar, Punjab 160055</a>
+                    <a href=""><i class="fas fa-envelope me-2"></i>
+                        info@avvacation.in</a>
+                    <a href=""><i class="fas fa-phone me-2"></i>(+91-73473-15059)</a>
+{{--                    <a href="" class="mb-3"><i class="fas fa-print me-2"></i> +012 345 67890</a>--}}
                     <div class="d-flex align-items-center">
                         <i class="fas fa-share fa-2x text-white me-2"></i>
                         <a class="btn-square btn btn-primary rounded-circle mx-1" href=""><i
@@ -95,12 +97,12 @@
     <div class="container">
         <div class="row g-4 align-items-center">
             <div class="col-md-6 text-center text-md-end mb-md-0">
-                <i class="fas fa-copyright me-2"></i><a class="text-white" href="#">Your Site Name</a>,
+                <i class="fas fa-copyright me-2"></i><a class="text-white" href="{{route('home')}}">AV Vacations</a>,
                 All right reserved.
             </div>
             <div class="col-md-6 text-center text-md-start">
 
-                Designed By <a class="text-white" href="#">Real Victor Group</a>
+                Developed By <a class="text-white" href="https://viralbusinessgroup.com">Viral Business Groups</a>
             </div>
         </div>
     </div>
