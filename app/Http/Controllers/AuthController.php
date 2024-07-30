@@ -92,6 +92,7 @@ class AuthController extends Controller
         $request->validate([
             'current_password' => 'required',
             'new_password' => 'required|confirmed|min:8',
+            'name' => 'required|string|max:255',
         ]);
 
         $user = Auth::user();
@@ -101,9 +102,10 @@ class AuthController extends Controller
         }
 
         $user->password = bcrypt($request->new_password);
+        $user->name = $request->name;
         $user->save();
 
-        return redirect()->back()->with('success', 'Password successfully updated.');
+        return redirect()->back()->with('success', 'Password and name successfully updated.');
     }
 
 
