@@ -8,7 +8,7 @@
                         E331, Phase 8B, Industrial Area, Sector 74, Sahibzada Ajit Singh Nagar, Punjab 160055</a>
                     <a href=""><i class="fas fa-envelope me-2"></i>
                         info@avvacation.in</a>
-                    <a href=""><i class="fas fa-phone me-2"></i>(+91-73473-15059)</a>
+                    <a href=""><i class="fas fa-phone me-2"></i>+91-73473-15059</a>
 {{--                    <a href="" class="mb-3"><i class="fas fa-print me-2"></i> +012 345 67890</a>--}}
                     <div class="d-flex align-items-center">
                         <i class="fas fa-share fa-2x text-white me-2"></i>
@@ -77,12 +77,13 @@
                     </div> --}}
                     <h4 class="text-white mb-3">Payments</h4>
                     <div class="footer-bank-card">
-                        <a href="#" class="text-white me-2"><i class="fab fa-cc-amex fa-2x"></i></a>
-                        <a href="#" class="text-white me-2"><i class="fab fa-cc-visa fa-2x"></i></a>
-                        <a href="#" class="text-white me-2"><i class="fas fa-credit-card fa-2x"></i></a>
-                        <a href="#" class="text-white me-2"><i class="fab fa-cc-mastercard fa-2x"></i></a>
-                        <a href="#" class="text-white me-2"><i class="fab fa-cc-paypal fa-2x"></i></a>
-                        <a href="#" class="text-white"><i class="fab fa-cc-discover fa-2x"></i></a>
+                        <a href="https://razorpay.me/@avvacationprivatelimited" > <img src="{{asset('asset/images/Screenshot-2023-10-04-070447.png.webp')}}" alt="">
+                        </a>
+{{--                        <a href="#" class="text-white me-2"><i class="fab fa-cc-visa fa-2x"></i></a>--}}
+{{--                        <a href="#" class="text-white me-2"><i class="fas fa-credit-card fa-2x"></i></a>--}}
+{{--                        <a href="#" class="text-white me-2"><i class="fab fa-cc-mastercard fa-2x"></i></a>--}}
+{{--                        <a href="#" class="text-white me-2"><i class="fab fa-cc-paypal fa-2x"></i></a>--}}
+{{--                        <a href="#" class="text-white"><i class="fab fa-cc-discover fa-2x"></i></a>--}}
                     </div>
                 </div>
             </div>
