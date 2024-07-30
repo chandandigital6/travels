@@ -56,7 +56,7 @@
 <body class="hold-transition login-page">
 <div class="login-box">
     <div class="login-logo">
-        <a href="#"><b>Mobile</b>SmashRepair</a>
+        <a href="#"><b>AV </b>Vacations</a>
     </div>
     <div class="card login-card-body">
         <p class="login-box-msg">Sign in to start your session</p>

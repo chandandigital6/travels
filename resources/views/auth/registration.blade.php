@@ -55,7 +55,7 @@
 <body class="hold-transition register-page">
 <div class="register-box">
     <div class="register-logo">
-        <a href="#"><b>Mobile</b>SmashRepair</a>
+        <a href="#"><b>Av</b>Vacations</a>
     </div>
     <div class="card register-card-body">
         <p class="login-box-msg">Register a new User</p>
