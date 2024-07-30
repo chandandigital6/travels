@@ -79,7 +79,6 @@
                 <div class="nav-item dropdown">
                     <a href="{{ route('destination') }}" class="nav-link dropdown-toggle {{ request()->routeIs('destination') ? 'active' : '' }}" data-bs-toggle="dropdown">Destinations</a>
                     <div class="dropdown-menu m-0">
-                        <a href="{{ route('destination') }}" class="dropdown-item {{ request()->routeIs('india') ? 'active' : '' }}"> Destinations</a>
 
                         <a href="{{ route('india') }}" class="dropdown-item {{ request()->routeIs('india') ? 'active' : '' }}">India Destinations</a>
                         <a href="#" class="dropdown-item {{ request()->routeIs('london') ? 'active' : '' }}">London Itinerary</a>
@@ -94,6 +93,8 @@
                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
                     <div class="dropdown-menu m-0">
                         {{-- <a href="{{ route('destination') }}" class="dropdown-item">Destination</a> --}}
+                        <a href="{{ route('destination') }}" class="dropdown-item {{ request()->routeIs('india') ? 'active' : '' }}"> Destinations</a>
+
                         <a href="{{ route('gallery') }}" class="dropdown-item {{ request()->routeIs('gallery') ? 'active' : '' }}">Our Gallery</a>
                         <a href="{{ route('testimonial') }}" class="dropdown-item {{ request()->routeIs('testimonial') ? 'active' : '' }}">Testimonial</a>
                     </div>
