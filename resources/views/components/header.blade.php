@@ -90,7 +90,7 @@
                     </div>
                 </div>
                 <div class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Others</a>
                     <div class="dropdown-menu m-0">
                         {{-- <a href="{{ route('destination') }}" class="dropdown-item">Destination</a> --}}
                         <a href="{{ route('destination') }}" class="dropdown-item {{ request()->routeIs('india') ? 'active' : '' }}"> Destinations</a>
