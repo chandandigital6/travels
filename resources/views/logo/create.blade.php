@@ -20,11 +20,11 @@
                 <label for="title">Title</label>
                 <input type="text" class="form-control" id="title" name="title" value="{{ old('title') }}">
             </div>
-            <div class="form-group">
-                <label for="msg">Message</label>
-                <textarea name="msg" id="msg" cols="30" rows="10" class="textarea form-control"></textarea>
+{{--            <div class="form-group">--}}
+{{--                <label for="msg">Message</label>--}}
+{{--                <textarea name="msg" id="msg" cols="30" rows="10" class="textarea form-control"></textarea>--}}
 {{--                <input type="text" class="form-control" id="msg" name="msg" value="{{ old('msg') }}">--}}
-            </div>
+{{--            </div>--}}
             <div class="form-group">
                 <label for="images">Images</label>
                 <input type="file" class="form-control file" id="image" name="image[]" multiple>

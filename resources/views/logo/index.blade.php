@@ -26,8 +26,8 @@
                 <div class="card">
                     <div class="card-header bg-primary text-white">
                         <div class="d-flex justify-content-between align-items-center">
-                            <h1> Client logo</h1>
-                            <a href="{{ route('logo.create') }}" class="btn btn-light">Create logo</a>
+                            <h1> Gallery Image</h1>
+                            <a href="{{ route('logo.create') }}" class="btn btn-light">Add Image</a>
                         </div>
                     </div>
 
@@ -47,7 +47,7 @@
                                 <tr>
                                     <th>ID</th>
                                     <th>Title</th>
-                                    <th>Massage</th>
+{{--                                    <th>Massage</th>--}}
                                     <th>Image</th>
                                     <th>Action</th>
                                 </tr>
@@ -57,7 +57,7 @@
                                     <tr>
                                         <td>{{ $logo->id }}</td>
                                         <td>{{ $logo->title }}</td>
-                                        <td>{!! $logo->msg !!}</td>
+{{--                                        <td>{!! $logo->msg !!}</td>--}}
                                         <td>
                                             @if (is_string($logo->image) && !empty($logo->image))
                                                 @php

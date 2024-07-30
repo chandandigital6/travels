@@ -19,10 +19,10 @@
                 <label for="title">Title</label>
                 <input type="text" class="form-control" id="title" name="title" value="{{ $logo->title }}">
             </div>
-            <div class="form-group">
-                <label for="msg">Message</label>
-                <textarea name="msg" id="msg" cols="30" rows="10" class="form-control textarea">{{ $logo->msg }}</textarea>
-            </div>
+{{--            <div class="form-group">--}}
+{{--                <label for="msg">Message</label>--}}
+{{--                <textarea name="msg" id="msg" cols="30" rows="10" class="form-control textarea">{{ $logo->msg }}</textarea>--}}
+{{--            </div>--}}
             <div class="form-group">
                 <label for="images">Images</label>
                 <input type="file" class="form-control file" id="image" name="image[]" multiple>
