@@ -431,7 +431,7 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="form-floating date" id="date3" data-target-input="nearest">
-                                    <input type="text" class="form-control bg-white border-0" id="datetime" name="date_time" placeholder="Date & Time" data-target="#date3" data-toggle="datetimepicker" />
+                                    <input type="datetime-local" class="form-control bg-white border-0" id="datetime" name="date_time" placeholder="Date & Time" data-target="#date3" data-toggle="datetimepicker" />
                                     <label for="datetime">Date & Time</label>
                                 </div>
                             </div>
@@ -456,7 +456,7 @@
 {{--                                        <option value="2">Persons 2</option>--}}
 {{--                                        <option value="3">Persons 3</option>--}}
 {{--                                    </select>--}}
-                                    <label for="SelectPerson">Number of Persons</label>
+                                    <label for="SelectPerson">Number of Guests</label>
                                 </div>
                             </div>
                             <div class="col-md-6">
@@ -475,7 +475,7 @@
                             <div class="col-12">
                                 <div class="form-floating">
                                     <textarea class="form-control bg-white border-0" placeholder="Special Request" id="message" name="msg" style="height: 100px"></textarea>
-                                    <label for="message">Special Request</label>
+                                    <label for="message">Messsage</label>
                                 </div>
                             </div>
                             <div class="col-12">
