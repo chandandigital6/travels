@@ -23,7 +23,7 @@
             <div class="row g-4">
                 <div class="col-lg-6">
                     <div class="row g-4">
-                        @foreach($services->take(4) as $service)
+                        @foreach($services->take(2) as $service)
 
 
                             <div class="col-12">
@@ -46,7 +46,7 @@
                 </div>
                 <div class="col-lg-6">
                     <div class="row g-4">
-                        @foreach($services->skip(4) as $service)
+                        @foreach($services->skip(2) as $service)
                             <div class="col-12">
                                 <div
                                     class="service-content-inner d-flex align-items-center bg-white border border-primary rounded p-4 ps-0">

@@ -13,6 +13,7 @@ use App\Models\Seo;
 use App\Models\Service;
 use App\Models\State;
 use App\Models\StateContent;
+use App\Models\StateVideo;
 use App\Models\Testimonial;
 use Illuminate\Http\Request;
 
@@ -88,12 +89,13 @@ class HomeController extends Controller
 
         // Retrieve the SEO entries for the state
         $seos = Seo::where('state_id', $state->id)->get();
+        $stateVideo = StateVideo::where('state_id', $state->id)->get();
 //      dd($seos);
         // Retrieve destinations with their associated states
         $destinations = Destination::with('states')->get();
 
         // Return the view with the retrieved data
-        return view('front_pages.details', compact('destinations', 'stateContents', 'state', 'seos'));
+        return view('front_pages.details', compact('destinations', 'stateContents', 'state', 'seos','stateVideo'));
     }
 
 

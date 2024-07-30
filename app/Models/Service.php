@@ -33,13 +33,7 @@ class Service extends Model
     }
 
 
-    public function serviceHeader()
-    {
-        return $this->hasMany(ServiceHeader::class);
-    }
 
-    public function serviceBefore()
-    {
-        return $this->hasMany(ServiceBefore::class);
-    }
+
+
 }

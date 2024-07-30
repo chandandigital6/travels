@@ -17,13 +17,18 @@ class State extends Model
 
     public function stateContents()
     {
-        return $this->belongsTo(StateContent::class,'state_id');
+        return $this->hasMany(StateContent::class,'state_id');
+    }
+
+    public function stateVideo()
+    {
+        return $this->hasMany(StateVideo::class,'state_id');
     }
 
 
     public function seo()
     {
-        return $this->belongsTo(Seo::class,'state_id');
+        return $this->hasMany(Seo::class,'state_id');
     }
 
 

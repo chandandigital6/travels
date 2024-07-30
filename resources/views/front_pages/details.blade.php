@@ -22,8 +22,12 @@
 
         <!-- Banner Image Section -->
         <div class="banner-image mt-5 position-relative d-flex justify-content-center">
-            <img src="{{ asset('storage/'.$state->image) }}" class="img-fluid rounded" alt="Rajasthan Itinerary"
+            @foreach($stateVideo as $img)
+
+
+            <img src="{{ asset('storage/'.$img->image) }}" class="img-fluid rounded" alt="Rajasthan Itinerary"
                  style="object-fit: cover; width: 95%; max-height: 80vh;">
+            @endforeach
         </div>
 
         <!-- Itinerary Section -->
@@ -155,17 +159,26 @@
         <!-- Video Section -->
         <div class="container-fluid px-0">
             <div class="row g-0 mt-5 mb-5">
+                @foreach($stateVideo as $stateVideos)
+
+
                 <div class="col-12 col-md-10 col-lg-12 mx-auto">
-                    <h2 class="text-center mb-4">Watch Our Kashmir Journey</h2>
+                    <h2 class="text-center mb-4">{{$stateVideos->title}}</h2>
                     <div class="video-container">
                         <div class="ratio ratio-16x9">
-                            <video controls muted class="rounded">
-                                <source src="{{ asset('asset/img/rajasthanvideo.mp4') }}" type="video/mp4">
-                                Your browser does not support the video tag.
-                            </video>
+                            @if ($stateVideos->youTubeEmbedUrl)
+                                <iframe width="200" height="113" src="{{ $stateVideos->youTubeEmbedUrl }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            @else
+                                No video available
+                            @endif
+{{--                            <video controls muted class="rounded">--}}
+{{--                                <source src="{{ asset('asset/img/rajasthanvideo.mp4') }}" type="video/mp4">--}}
+{{--                                Your browser does not support the video tag.--}}
+{{--                            </video>--}}
                         </div>
                     </div>
                 </div>
+                @endforeach
             </div>
         </div>
         <!-- Video Section End -->

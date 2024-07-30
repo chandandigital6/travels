@@ -26,6 +26,7 @@ use App\Http\Controllers\ServiceTitleController;
 use App\Http\Controllers\ServiceVideoController;
 use App\Http\Controllers\StateContentControler;
 use App\Http\Controllers\StateController;
+use App\Http\Controllers\StateVideosController;
 use App\Http\Controllers\TeamController;
 use App\Http\Controllers\TestimonialController;
 use App\Http\Requests\StateContentRequest;
@@ -364,6 +365,16 @@ Route::group(['middleware' => ['auth']],function (){
     Route::post('stateContent/update/{stateContent}',[StateContentControler::class,'update'])->name('stateContent.update');
     Route::get('stateContent/delete/{stateContent}',[StateContentControler::class,'delete'])->name('stateContent.delete');
     Route::get('stateContent/duplicate/{stateContent}',[StateContentControler::class,'duplicate'])->name('stateContent.duplicate');
+
+
+
+    Route::get('stateVideo/index',[StateVideosController::class,'index'])->name('stateVideo.index');
+    Route::get('stateVideo/create',[StateVideosController::class,'create'])->name('stateVideo.create');
+    Route::post('stateVideo/store',[StateVideosController::class,'store'])->name('stateVideo.store');
+    Route::get('stateVideo/edit/{stateVideo}',[StateVideosController::class,'edit'])->name('stateVideo.edit');
+    Route::post('stateVideo/update/{stateVideo}',[StateVideosController::class,'update'])->name('stateVideo.update');
+    Route::get('stateVideo/delete/{stateVideo}',[StateVideosController::class,'delete'])->name('stateVideo.delete');
+    Route::get('stateVideo/duplicate/{stateVideo}',[StateVideosController::class,'duplicate'])->name('stateVideo.duplicate');
 
 });
 

@@ -93,6 +93,12 @@
                         <p>StatesContent</p>
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a href="{{route('stateVideo.index')}}" class="nav-link">
+                        <i class="nav-icon fa fa-bug"></i>
+                        <p>StatesVideo & Image</p>
+                    </a>
+                </li>
 
                 <li class="nav-item">
                     <a href="{{route('testimonial.index')}}" class="nav-link">
