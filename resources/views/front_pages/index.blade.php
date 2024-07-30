@@ -245,233 +245,7 @@
    <!-- Destination End -->
 
 
-   <!-- Explore Tour Start -->
-    {{-- <div class="container-fluid ExploreTour py-5">
-        <div class="container py-5">
-            <div class="mx-auto text-center mb-5" style="max-width: 900px;">
-                <h5 class="section-title px-3">Explore Tour</h5>
-                <h1 class="mb-4">The World</h1>
-                <p class="mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum tempore nam,
-                    architecto doloremque velit explicabo? Voluptate sunt eveniet fuga eligendi! Expedita laudantium
-                    fugiat corrupti eum cum repellat a laborum quasi.
-                </p>
-            </div>
-            <div class="tab-class text-center">
-                <ul class="nav nav-pills d-inline-flex justify-content-center mb-5">
-                    <li class="nav-item">
-                        <a class="d-flex mx-3 py-2 border border-primary bg-light rounded-pill active"
-                            data-bs-toggle="pill" href="#NationalTab-1">
-                            <span class="text-dark" style="width: 250px;">National Tour Category</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="d-flex py-2 mx-3 border border-primary bg-light rounded-pill" data-bs-toggle="pill"
-                            href="#InternationalTab-2">
-                            <span class="text-dark" style="width: 250px;">International tour Category</span>
-                        </a>
-                    </li>
-                </ul>
-                <div class="tab-content">
-                    <div id="NationalTab-1" class="tab-pane fade show p-0 active">
-                        <div class="row g-4">
-                            <div class="col-md-6 col-lg-4">
-                                <div class="national-item">
-                                    <img src="{{ asset('asset/img/explore-tour-1.jpg') }}"
-                                        class="img-fluid w-100 rounded" alt="Image">
-                                    <div class="national-content">
-                                        <div class="national-info">
-                                            <h5 class="text-white text-uppercase mb-2">Weekend Tour</h5>
-                                            <a href="#" class="btn-hover text-white">View All Place <i
-                                                    class="fa fa-arrow-right ms-2"></i></a>
-                                        </div>
-                                    </div>
-                                    <div class="national-plus-icon">
-                                        <a href="#" class="my-auto"><i
-                                                class="fas fa-link fa-2x text-white"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6 col-lg-4">
-                                <div class="national-item">
-                                    <img src="{{ asset('asset/img/explore-tour-2.jpg') }}"
-                                        class="img-fluid w-100 rounded" alt="Image">
-                                    <div class="national-content">
-                                        <div class="national-info">
-                                            <h5 class="text-white text-uppercase mb-2">Holiday Tour</h5>
-                                            <a href="#" class="btn-hover text-white">View All Place <i
-                                                    class="fa fa-arrow-right ms-2"></i></a>
-                                        </div>
-                                    </div>
-                                    <div class="national-plus-icon">
-                                        <a href="#" class="my-auto"><i
-                                                class="fas fa-link fa-2x text-white"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6 col-lg-4">
-                                <div class="national-item">
-                                    <img src="{{ asset('asset/img/explore-tour-3.jpg') }}"
-                                        class="img-fluid w-100 rounded" alt="Image">
-                                    <div class="national-content">
-                                        <div class="national-info">
-                                            <h5 class="text-white text-uppercase mb-2">Road Trip</h5>
-                                            <a href="#" class="btn-hover text-white">View All Place <i
-                                                    class="fa fa-arrow-right ms-2"></i></a>
-                                        </div>
-                                    </div>
-                                    <div class="tour-offer bg-info">15% Off</div>
-                                    <div class="national-plus-icon">
-                                        <a href="#" class="my-auto"><i
-                                                class="fas fa-link fa-2x text-white"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6 col-lg-4">
-                                <div class="national-item">
-                                    <img src="{{ asset('asset/img/explore-tour-4.jpg') }}"
-                                        class="img-fluid w-100 rounded" alt="Image">
-                                    <div class="national-content">
-                                        <div class="national-info">
-                                            <h5 class="text-white text-uppercase mb-2">Historical Trip</h5>
-                                            <a href="#" class="btn-hover text-white">View All Place <i
-                                                    class="fa fa-arrow-right ms-2"></i></a>
-                                        </div>
-                                    </div>
-                                    <div class="national-plus-icon">
-                                        <a href="#" class="my-auto"><i
-                                                class="fas fa-link fa-2x text-white"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6 col-lg-4">
-                                <div class="national-item">
-                                    <img src="{{ asset('asset/img/explore-tour-5.jpg') }}"
-                                        class="img-fluid w-100 rounded" alt="Image">
-                                    <div class="national-content">
-                                        <div class="national-info">
-                                            <h5 class="text-white text-uppercase mb-2">Family Tour</h5>
-                                            <a href="#" class="btn-hover text-white">View All Place <i
-                                                    class="fa fa-arrow-right ms-2"></i></a>
-                                        </div>
-                                    </div>
-                                    <div class="tour-offer bg-warning">50% Off</div>
-                                    <div class="national-plus-icon">
-                                        <a href="#" class="my-auto"><i
-                                                class="fas fa-link fa-2x text-white"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6 col-lg-4">
-                                <div class="national-item">
-                                    <img src="{{ asset('asset/img/explore-tour-6.jpg') }}"
-                                        class="img-fluid w-100 rounded" alt="Image">
-                                    <div class="national-content">
-                                        <div class="national-info">
-                                            <h5 class="text-white text-uppercase mb-2">Beach Tour</h5>
-                                            <a href="#" class="btn-hover text-white">View All Place <i
-                                                    class="fa fa-arrow-right ms-2"></i></a>
-                                        </div>
-                                    </div>
-                                    <div class="national-plus-icon">
-                                        <a href="#" class="my-auto"><i
-                                                class="fas fa-link fa-2x text-white"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div id="InternationalTab-2" class="tab-pane fade show p-0">
-                        <div class="InternationalTour-carousel owl-carousel">
-                            <div class="international-item">
-                                <img src="{{ asset('asset/img/explore-tour-1.jpg') }}" class="img-fluid w-100 rounded"
-                                    alt="Image">
-                                <div class="international-content">
-                                    <div class="international-info">
-                                        <h5 class="text-white text-uppercase mb-2">Australia</h5>
-                                        <a href="#" class="btn-hover text-white me-4"><i
-                                                class="fas fa-map-marker-alt me-1"></i> 8 Cities</a>
-                                        <a href="#" class="btn-hover text-white"><i class="fa fa-eye ms-2"></i>
-                                            <span>143+ Tour Places</span></a>
-                                    </div>
-                                </div>
-                                <div class="tour-offer bg-success">30% Off</div>
-                                <div class="international-plus-icon">
-                                    <a href="#" class="my-auto"><i class="fas fa-link fa-2x text-white"></i></a>
-                                </div>
-                            </div>
-                            <div class="international-item">
-                                <img src="{{ asset('asset/img/explore-tour-2.jpg') }}" class="img-fluid w-100 rounded"
-                                    alt="Image">
-                                <div class="international-content">
-                                    <div class="international-info">
-                                        <h5 class="text-white text-uppercase mb-2">Germany</h5>
-                                        <a href="#" class="btn-hover text-white me-4"><i
-                                                class="fas fa-map-marker-alt me-1"></i> 12 Cities</a>
-                                        <a href="#" class="btn-hover text-white"><i class="fa fa-eye ms-2"></i>
-                                            <span>21+ Tour Places</span></a>
-                                    </div>
-                                </div>
-                                <div class="international-plus-icon">
-                                    <a href="#" class="my-auto"><i class="fas fa-link fa-2x text-white"></i></a>
-                                </div>
-                            </div>
-                            <div class="international-item">
-                                <img src="{{ asset('asset/img/explore-tour-3.jpg') }}" class="img-fluid w-100 rounded"
-                                    alt="Image">
-                                <div class="international-content">
-                                    <div class="tour-offer bg-warning">45% Off</div>
-                                    <div class="international-info">
-                                        <h5 class="text-white text-uppercase mb-2">Spain</h5>
-                                        <a href="#" class="btn-hover text-white me-4"><i
-                                                class="fas fa-map-marker-alt me-1"></i> 9 Cities</a>
-                                        <a href="#" class="btn-hover text-white"><i class="fa fa-eye ms-2"></i>
-                                            <span>133+ Tour Places</span></a>
-                                    </div>
-                                </div>
-                                <div class="international-plus-icon">
-                                    <a href="#" class="my-auto"><i class="fas fa-link fa-2x text-white"></i></a>
-                                </div>
-                            </div>
-                            <div class="international-item">
-                                <img src="{{ asset('asset/img/explore-tour-4.jpg') }}" class="img-fluid w-100 rounded"
-                                    alt="Image">
-                                <div class="international-content">
-                                    <div class="international-info">
-                                        <h5 class="text-white text-uppercase mb-2">Japan</h5>
-                                        <a href="#" class="btn-hover text-white me-4"><i
-                                                class="fas fa-map-marker-alt me-1"></i> 8 Cities</a>
-                                        <a href="#" class="btn-hover text-white"><i class="fa fa-eye ms-2"></i>
-                                            <span>137+ Tour Places</span></a>
-                                    </div>
-                                </div>
-                                <div class="international-plus-icon">
-                                    <a href="#" class="my-auto"><i class="fas fa-link fa-2x text-white"></i></a>
-                                </div>
-                            </div>
-                            <div class="international-item">
-                                <img src="{{ asset('asset/img/explore-tour-5.jpg') }}" class="img-fluid w-100 rounded"
-                                    alt="Image">
-                                <div class="international-content">
-                                    <div class="tour-offer bg-info">70% Off</div>
-                                    <div class="international-info">
-                                        <h5 class="text-white text-uppercase mb-2">London</h5>
-                                        <a href="#" class="btn-hover text-white me-4"><i
-                                                class="fas fa-map-marker-alt me-1"></i> 17 Cities</a>
-                                        <a href="#" class="btn-hover text-white"><i class="fa fa-eye ms-2"></i>
-                                            <span>26+ Tour Places</span></a>
-                                    </div>
-                                </div>
-                                <div class="international-plus-icon">
-                                    <a href="#" class="my-auto"><i class="fas fa-link fa-2x text-white"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> --}}
-    <!-- Explore Tour Start -->
+
 
     <!-- Packages Start -->
     <div class="container-fluid packages py-5">
@@ -533,10 +307,10 @@
         <div class="mx-auto text-center mb-5" style="max-width: 900px;">
             <h5 class="section-title px-3">Our Gallery</h5>
             <h1 class="mb-4">Tourism & Traveling Gallery.</h1>
-            <p class="mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum tempore nam, architecto
-                doloremque velit explicabo? Voluptate sunt eveniet fuga eligendi! Expedita laudantium fugiat corrupti
-                eum cum repellat a laborum quasi.
-            </p>
+{{--            <p class="mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum tempore nam, architecto--}}
+{{--                doloremque velit explicabo? Voluptate sunt eveniet fuga eligendi! Expedita laudantium fugiat corrupti--}}
+{{--                eum cum repellat a laborum quasi.--}}
+{{--            </p>--}}
         </div>
         <div class="tab-class text-center">
             <ul class="nav nav-pills d-inline-flex justify-content-center mb-5">
@@ -714,122 +488,7 @@
     </div>
     <!-- Tour Booking End -->
 
-    <!-- Travel Guide Start -->
-    {{-- <div class="container-fluid guide py-5">
-        <div class="container py-5">
-            <div class="mx-auto text-center mb-5" style="max-width: 900px;">
-                <h5 class="section-title px-3">Travel Guide</h5>
-                <h1 class="mb-0">Meet Our Guide</h1>
-            </div>
-            <div class="row g-4">
-                <div class="col-md-6 col-lg-3">
-                    <div class="guide-item">
-                        <div class="guide-img">
-                            <div class="guide-img-efects">
-                                <img src="{{ asset('asset/img/guide-1.jpg') }}" class="img-fluid w-100 rounded-top"
-                                    alt="Image">
-                            </div>
-                            <div class="guide-icon rounded-pill p-2">
-                                <a class="btn btn-square btn-primary rounded-circle mx-1" href=""><i
-                                        class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-square btn-primary rounded-circle mx-1" href=""><i
-                                        class="fab fa-twitter"></i></a>
-                                <a class="btn btn-square btn-primary rounded-circle mx-1" href=""><i
-                                        class="fab fa-instagram"></i></a>
-                                <a class="btn btn-square btn-primary rounded-circle mx-1" href=""><i
-                                        class="fab fa-linkedin-in"></i></a>
-                            </div>
-                        </div>
-                        <div class="guide-title text-center rounded-bottom p-4">
-                            <div class="guide-title-inner">
-                                <h4 class="mt-3">Full Name</h4>
-                                <p class="mb-0">Designation</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3">
-                    <div class="guide-item">
-                        <div class="guide-img">
-                            <div class="guide-img-efects">
-                                <img src="{{ asset('asset/img/guide-2.jpg') }}" class="img-fluid w-100 rounded-top"
-                                    alt="Image">
-                            </div>
-                            <div class="guide-icon rounded-pill p-2">
-                                <a class="btn btn-square btn-primary rounded-circle mx-1" href=""><i
-                                        class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-square btn-primary rounded-circle mx-1" href=""><i
-                                        class="fab fa-twitter"></i></a>
-                                <a class="btn btn-square btn-primary rounded-circle mx-1" href=""><i
-                                        class="fab fa-instagram"></i></a>
-                                <a class="btn btn-square btn-primary rounded-circle mx-1" href=""><i
-                                        class="fab fa-linkedin-in"></i></a>
-                            </div>
-                        </div>
-                        <div class="guide-title text-center rounded-bottom p-4">
-                            <div class="guide-title-inner">
-                                <h4 class="mt-3">Full Name</h4>
-                                <p class="mb-0">Designation</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3">
-                    <div class="guide-item">
-                        <div class="guide-img">
-                            <div class="guide-img-efects">
-                                <img src="{{ asset('asset/img/guide-3.jpg') }}" class="img-fluid w-100 rounded-top"
-                                    alt="Image">
-                            </div>
-                            <div class="guide-icon rounded-pill p-2">
-                                <a class="btn btn-square btn-primary rounded-circle mx-1" href=""><i
-                                        class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-square btn-primary rounded-circle mx-1" href=""><i
-                                        class="fab fa-twitter"></i></a>
-                                <a class="btn btn-square btn-primary rounded-circle mx-1" href=""><i
-                                        class="fab fa-instagram"></i></a>
-                                <a class="btn btn-square btn-primary rounded-circle mx-1" href=""><i
-                                        class="fab fa-linkedin-in"></i></a>
-                            </div>
-                        </div>
-                        <div class="guide-title text-center rounded-bottom p-4">
-                            <div class="guide-title-inner">
-                                <h4 class="mt-3">Full Name</h4>
-                                <p class="mb-0">Designation</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3">
-                    <div class="guide-item">
-                        <div class="guide-img">
-                            <div class="guide-img-efects">
-                                <img src="{{ asset('asset/img/guide-4.jpg') }}" class="img-fluid w-100 rounded-top"
-                                    alt="Image">
-                            </div>
-                            <div class="guide-icon rounded-pill p-2">
-                                <a class="btn btn-square btn-primary rounded-circle mx-1" href=""><i
-                                        class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-square btn-primary rounded-circle mx-1" href=""><i
-                                        class="fab fa-twitter"></i></a>
-                                <a class="btn btn-square btn-primary rounded-circle mx-1" href=""><i
-                                        class="fab fa-instagram"></i></a>
-                                <a class="btn btn-square btn-primary rounded-circle mx-1" href=""><i
-                                        class="fab fa-linkedin-in"></i></a>
-                            </div>
-                        </div>
-                        <div class="guide-title text-center rounded-bottom p-4">
-                            <div class="guide-title-inner">
-                                <h4 class="mt-3">Full Name</h4>
-                                <p class="mb-0">Designation</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> --}}
-    <!-- Travel Guide End -->
+
 
     <!-- Blog Start -->
     <div class="container-fluid blog py-5">
@@ -837,10 +496,10 @@
             <div class="mx-auto text-center mb-5" style="max-width: 900px;">
                 <h5 class="section-title px-3">Our Blog</h5>
                 <h1 class="mb-4">Popular Travel Blogs</h1>
-                <p class="mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti deserunt tenetur
-                    sapiente atque. Magni non explicabo beatae sit, vel reiciendis consectetur numquam id similique sunt
-                    error obcaecati ducimus officia maiores.
-                </p>
+{{--                <p class="mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti deserunt tenetur--}}
+{{--                    sapiente atque. Magni non explicabo beatae sit, vel reiciendis consectetur numquam id similique sunt--}}
+{{--                    error obcaecati ducimus officia maiores.--}}
+{{--                </p>--}}
             </div>
             <div class="row g-4 justify-content-center">
                 @foreach($blogs->take(3) as $blog)
@@ -882,48 +541,46 @@
     </div>
     <!-- Blog End -->
 
-    <!-- Testimonial Start -->
-    <div class="container-fluid testimonial py-5">
-        <div class="container py-5">
-            <div class="mx-auto text-center mb-5" style="max-width: 900px;">
-                <h5 class="section-title px-3">Testimonial</h5>
-                <h1 class="mb-0">Our Clients Say!!!</h1>
-            </div>
+   <!-- Testimonial Start -->
+   <div class="container-fluid testimonial py-5">
+       <div class="container py-5">
+           <div class="mx-auto text-center mb-5" style="max-width: 900px;">
+               <h5 class="section-title px-3">Testimonial</h5>
+               <h1 class="mb-0">Our Clients Say!!!</h1>
+           </div>
+
+           <div class="testimonial-carousel owl-carousel">
+               @foreach($testimonials as $testimonial)
+                   <div class="testimonial-item text-center rounded pb-4">
+                       <div class="testimonial-comment bg-light rounded p-4">
+                           <p class="text-center mb-5">
+                               {!! $testimonial->msg !!}
+                           </p>
+                       </div>
+                       <div class="testimonial-img p-1">
+                           <img src="{{ asset('storage/'.$testimonial->image) }}" class="img-fluid rounded-circle"
+                                alt="Image">
+                       </div>
+                       <div style="margin-top: -35px;">
+                           <h5 class="mb-0">{{$testimonial->name}}</h5>
+                           {{-- <p class="mb-0">New York, USA</p> --}}
+                           <div class="d-flex justify-content-center">
+                               <i class="fas fa-star text-primary"></i>
+                               <i class="fas fa-star text-primary"></i>
+                               <i class="fas fa-star text-primary"></i>
+                               <i class="fas fa-star text-primary"></i>
+                               <i class="fas fa-star text-primary"></i>
+                           </div>
+                       </div>
+                   </div>
+               @endforeach
+           </div>
+       </div>
+   </div>
+   <!-- Testimonial End -->
 
 
-
-            <div class="testimonial-carousel owl-carousel">
-                @foreach($testimonials as $testimonial)
-                <div class="testimonial-item text-center rounded pb-4">
-                    <div class="testimonial-comment bg-light rounded p-4">
-                        <p class="text-center mb-5">
-                            {!! $testimonial->msg !!}
-                        </p>
-                    </div>
-                    <div class="testimonial-img p-1">
-                        <img src="{{ asset('storage/'.$testimonial->image) }}" class="img-fluid rounded-circle"
-                            alt="Image">
-                    </div>
-                    <div style="margin-top: -35px;">
-                        <h5 class="mb-0">{{$testimonial->name}}</h5>
-{{--                        <p class="mb-0">New York, USA</p>--}}
-                        <div class="d-flex justify-content-center">
-                            <i class="fas fa-star text-primary"></i>
-                            <i class="fas fa-star text-primary"></i>
-                            <i class="fas fa-star text-primary"></i>
-                            <i class="fas fa-star text-primary"></i>
-                            <i class="fas fa-star text-primary"></i>
-                        </div>
-                    </div>
-                </div>
-                @endforeach
-
-            </div>
-        </div>
-    </div>
-    <!-- Testimonial End -->
-
-    <!-- Subscribe Start -->
+   <!-- Subscribe Start -->
     <div class="container-fluid subscribe py-5">
         <div class="container text-center py-5">
             <div class="mx-auto text-center" style="max-width: 900px;">
