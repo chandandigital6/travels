@@ -266,7 +266,7 @@
                             style="width: 100%; bottom: 0; left: 0; z-index: 5;">
                             <small class="flex-fill text-center border-end py-2"><i
                                     class="fa fa-map-marker-alt me-2"></i>{{$package->city}}</small>
-                            <small class="flex-fill text-center border-end py-2"><i class="fa fa-calendar-alt me-2"></i>3
+                            <small class="flex-fill text-center border-end py-2"><i class="fa fa-calendar-alt me-2"></i>
                                 {{$package->days}}</small>
                             <small class="flex-fill text-center py-2"><i class="fa fa-user me-2"></i>{{$package->number_of_person}}</small>
                         </div>
