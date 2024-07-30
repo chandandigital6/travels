@@ -77,14 +77,16 @@
                     </div> --}}
                     <h4 class="text-white mb-3">Payments</h4>
                     <div class="footer-bank-card">
-                        <a href="https://razorpay.me/@avvacationprivatelimited" > <img src="{{asset('asset/images/Screenshot-2023-10-04-070447.png.webp')}}" alt="">
-                        </a>
-{{--                        <a href="#" class="text-white me-2"><i class="fab fa-cc-visa fa-2x"></i></a>--}}
-{{--                        <a href="#" class="text-white me-2"><i class="fas fa-credit-card fa-2x"></i></a>--}}
-{{--                        <a href="#" class="text-white me-2"><i class="fab fa-cc-mastercard fa-2x"></i></a>--}}
-{{--                        <a href="#" class="text-white me-2"><i class="fab fa-cc-paypal fa-2x"></i></a>--}}
-{{--                        <a href="#" class="text-white"><i class="fab fa-cc-discover fa-2x"></i></a>--}}
+                        <a href="#" class="text-white me-2"><i class="fab fa-cc-amex fa-2x"></i></a>
+                        <a href="#" class="text-white me-2"><i class="fab fa-cc-visa fa-2x"></i></a>
+                        <a href="#" class="text-white me-2"><i class="fas fa-credit-card fa-2x"></i></a>
+                        <a href="#" class="text-white me-2"><i class="fab fa-cc-mastercard fa-2x"></i></a>
+                        <a href="#" class="text-white me-2"><i class="fab fa-cc-paypal fa-2x"></i></a>
+                        <a href="#" class="text-white"><i class="fab fa-cc-discover fa-2x"></i></a>
+
                     </div>
+                    <a href="https://razorpay.me/@avvacationprivatelimited" > <img src="{{asset('asset/images/Screenshot-2023-10-04-070447.png.webp')}}" alt=""></a>
+
                 </div>
             </div>
         </div>
