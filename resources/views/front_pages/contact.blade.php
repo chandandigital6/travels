@@ -28,28 +28,31 @@
                             <h4 class="text-primary">
                                 <Address></Address>
                             </h4>
-                            <p class="mb-0">123 ranking Street, <br> New York, USA</p>
+                            <p>
+                                Miran Tower
+                                E331, Phase 8B, Industrial Area, Sector 74, Sahibzada Ajit Singh Nagar, Punjab 160055
+                            </p>
                         </div>
                         <div class="text-center mb-4">
                             <i class="fa fa-phone-alt fa-3x text-primary mb-3"></i>
                             <h4 class="text-primary">Mobile</h4>
-                            <p class="mb-0">+012 345 67890</p>
-                            <p class="mb-0">+012 345 67890</p>
+                            <p class="mb-0">+91-73473-15059</p>
+{{--                            <p class="mb-0">+012 345 67890</p>--}}
                         </div>
 
                         <div class="text-center">
                             <i class="fa fa-envelope-open fa-3x text-primary mb-3"></i>
                             <h4 class="text-primary">Email</h4>
-                            <p class="mb-0">info@example.com</p>
-                            <p class="mb-0">info@example.com</p>
+                            <p class="mb-0"> info@avvacation.in</p>
+{{--                            <p class="mb-0">info@example.com</p>--}}
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-8">
                     <h3 class="mb-2">Send us a message</h3>
-                    <p class="mb-4">The contact form is currently inactive. Get a functional and working contact form with
-                        Ajax & PHP in a few minutes. Just copy and paste the files, add a little code and you're done. <a
-                            href="https://htmlcodex.com/contact-form">Download Now</a>.</p>
+{{--                    <p class="mb-4">The contact form is currently inactive. Get a functional and working contact form with--}}
+{{--                        Ajax & PHP in a few minutes. Just copy and paste the files, add a little code and you're done. <a--}}
+{{--                            href="">Download Now</a>.</p>--}}
                     <form>
                         <div class="row g-3">
                             <div class="col-md-6">
@@ -97,24 +100,5 @@
     </div>
     <!-- Contact End -->
 
-    <!-- Subscribe Start -->
-    <div class="container-fluid subscribe py-5">
-        <div class="container text-center py-5">
-            <div class="mx-auto text-center" style="max-width: 900px;">
-                <h5 class="subscribe-title px-3">Subscribe</h5>
-                <h1 class="text-white mb-4">Our Newsletter</h1>
-                <p class="text-white mb-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum tempore nam,
-                    architecto doloremque velit explicabo? Voluptate sunt eveniet fuga eligendi! Expedita laudantium fugiat
-                    corrupti eum cum repellat a laborum quasi.
-                </p>
-                <div class="position-relative mx-auto">
-                    <input class="form-control border-primary rounded-pill w-100 py-3 ps-4 pe-5" type="text"
-                        placeholder="Your email">
-                    <button type="button"
-                        class="btn btn-primary rounded-pill position-absolute top-0 end-0 py-2 px-4 mt-2 me-2">Subscribe</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Subscribe End -->
+    @include('components.newsLater')
 @endsection

@@ -18,10 +18,10 @@
         <div class="mx-auto text-center mb-5" style="max-width: 900px;">
             <h5 class="section-title px-3">Our Gallery</h5>
             <h1 class="mb-4">Tourism & Traveling Gallery.</h1>
-            <p class="mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum tempore nam, architecto
-                doloremque velit explicabo? Voluptate sunt eveniet fuga eligendi! Expedita laudantium fugiat corrupti
-                eum cum repellat a laborum quasi.
-            </p>
+{{--            <p class="mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum tempore nam, architecto--}}
+{{--                doloremque velit explicabo? Voluptate sunt eveniet fuga eligendi! Expedita laudantium fugiat corrupti--}}
+{{--                eum cum repellat a laborum quasi.--}}
+{{--            </p>--}}
         </div>
         <div class="tab-class text-center">
             <ul class="nav nav-pills d-inline-flex justify-content-center mb-5">
@@ -108,24 +108,5 @@
     </div>
     <!-- Gallery End -->
 
-    <!-- Subscribe Start -->
-    <div class="container-fluid subscribe py-5">
-        <div class="container text-center py-5">
-            <div class="mx-auto text-center" style="max-width: 900px;">
-                <h5 class="subscribe-title px-3">Subscribe</h5>
-                <h1 class="text-white mb-4">Our Newsletter</h1>
-                <p class="text-white mb-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum tempore nam,
-                    architecto doloremque velit explicabo? Voluptate sunt eveniet fuga eligendi! Expedita laudantium fugiat
-                    corrupti eum cum repellat a laborum quasi.
-                </p>
-                <div class="position-relative mx-auto">
-                    <input class="form-control border-primary rounded-pill w-100 py-3 ps-4 pe-5" type="text"
-                        placeholder="Your email">
-                    <button type="button"
-                        class="btn btn-primary rounded-pill position-absolute top-0 end-0 py-2 px-4 mt-2 me-2">Subscribe</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Subscribe End -->
+    @include('components.newsLater')
 @endsection

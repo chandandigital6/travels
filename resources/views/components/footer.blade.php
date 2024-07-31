@@ -38,7 +38,7 @@
                 <div class="footer-item d-flex flex-column">
                     <h4 class="mb-4 text-white">Support</h4>
                     <a href="{{ route('contact') }}"><i class="fas fa-angle-right me-2"></i> Contact</a>
-                    <a href="{{ route('legalnotice') }}"><i class="fas fa-angle-right me-2"></i> Legal Notice</a>
+{{--                    <a href="{{ route('legalnotice') }}"><i class="fas fa-angle-right me-2"></i> Legal Notice</a>--}}
                     <a href="{{ route('privacypolicy') }}"><i class="fas fa-angle-right me-2"></i> Privacy Policy</a>
                     <a href="{{ route('termsconditon') }}"><i class="fas fa-angle-right me-2"></i> Terms and Conditions</a>
                     {{-- <a href=""><i class="fas fa-angle-right me-2"></i> Sitemap</a> --}}
