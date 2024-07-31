@@ -99,6 +99,16 @@
                         <a href="{{ route('testimonial') }}" class="dropdown-item {{ request()->routeIs('testimonial') ? 'active' : '' }}">Testimonial</a>
                     </div>
                 </div>
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Resort</a>
+                    <div class="dropdown-menu m-0">
+                        {{-- <a href="{{ route('destination') }}" class="dropdown-item">Destination</a> --}}
+                        <a href="{{ route('destination') }}" class="dropdown-item {{ request()->routeIs('india') ? 'active' : '' }}"> National</a>
+
+                        <a href="{{ route('gallery') }}" class="dropdown-item {{ request()->routeIs('gallery') ? 'active' : '' }}">InterNational</a>
+{{--                        <a href="{{ route('testimonial') }}" class="dropdown-item {{ request()->routeIs('testimonial') ? 'active' : '' }}">Testimonial</a>--}}
+                    </div>
+                </div>
                 <a href="{{ route('contact') }}" class="nav-item nav-link {{ request()->routeIs('contact') ? 'active' : '' }}">Contact</a>
             </div>
 
