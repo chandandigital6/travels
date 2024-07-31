@@ -63,7 +63,7 @@
                                         <td>
                                             <div class="btn-group" role="group">
                                                 <a href="{{ route('contact.delete', $contact->id) }}" class="btn btn-danger">Delete</a>
-                                                <a href="{{ route('contact.duplicate', $contact->id) }}" class="btn btn-warning">show</a>
+{{--                                                <a href="{{ route('contact.duplicate', $contact->id) }}" class="btn btn-warning">show</a>--}}
                                             </div>
                                         </td>
                                     </tr>
