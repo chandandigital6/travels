@@ -10,6 +10,7 @@ use App\Http\Controllers\BookClientController;
 use App\Http\Controllers\BookTabaleController;
 use App\Http\Controllers\ChooseController;
 use App\Http\Controllers\ClientController;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\CounterController;
 use App\Http\Controllers\DestinationController;
 use App\Http\Controllers\LoginController;
@@ -144,6 +145,7 @@ Route::post('/update-password', [AuthController::class, 'updatePassword'])->name
 
 Route::post('bookTable/store',[BookTabaleController::class,'store'])->name('bookTable.store');
 Route::post('bookClient/store',[BookClientController::class,'store'])->name('bookClient.store');
+Route::post('contact/store',[ContactController::class,'store'])->name('contact.store');
 
 Route::post('appointment/store',[AppointmentController::class,'store'])->name('appointment.store');
 Route::post('appointment/image',[AppointmentController::class,'image'])->name('appointment.image');
@@ -202,6 +204,14 @@ Route::group(['middleware' => ['auth']],function (){
     Route::post('bookClient/update/{bookClient}',[BookClientController::class,'update'])->name('bookClient.update');
     Route::get('bookClient/delete/{bookClient}',[BookClientController::class,'delete'])->name('bookClient.delete');
     Route::get('bookClient/duplicate/{bookClient}',[BookClientController::class,'duplicate'])->name('bookClient.duplicate');
+
+
+    Route::get('contact/index',[ContactController::class,'index'])->name('contact.index');
+    Route::get('contact/create',[ContactController::class,'create'])->name('contact.create');
+    Route::get('contact/edit/{contact}',[ContactController::class,'edit'])->name('contact.edit');
+    Route::post('contact/update/{contact}',[ContactController::class,'update'])->name('contact.update');
+    Route::get('contact/delete/{contact}',[ContactController::class,'delete'])->name('contact.delete');
+    Route::get('contact/duplicate/{contact}',[ContactController::class,'duplicate'])->name('contact.duplicate');
 
     //services
 

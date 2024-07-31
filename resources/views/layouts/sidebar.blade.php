@@ -124,6 +124,13 @@
                         <p>BookClientsId</p>
                     </a>
                 </li>
+
+                <li class="nav-item">
+                    <a href="{{route('contact.index')}}" class="nav-link">
+                        <i class="nav-icon fa fa-american-sign-language-interpreting"></i>
+                        <p>Contact</p>
+                    </a>
+                </li>
                 <li class="nav-item">
                     <a href="{{route('blogs.index')}}" class="nav-link">
                         <i class="nav-icon fa fa-asterisk"></i>

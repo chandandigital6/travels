@@ -53,33 +53,54 @@
 {{--                    <p class="mb-4">The contact form is currently inactive. Get a functional and working contact form with--}}
 {{--                        Ajax & PHP in a few minutes. Just copy and paste the files, add a little code and you're done. <a--}}
 {{--                            href="">Download Now</a>.</p>--}}
-                    <form>
+                    <form action="{{ route('contact.store') }}" method="post" enctype="multipart/form-data">
+                        @csrf
                         <div class="row g-3">
                             <div class="col-md-6">
                                 <div class="form-floating">
-                                    <input type="text" class="form-control border-0" id="name"
-                                        placeholder="Your Name">
+                                    <input type="text" class="form-control border-0 @error('name') is-invalid @enderror" id="name"
+                                           name="name" placeholder="Your Name" value="{{ old('name') }}">
                                     <label for="name">Your Name</label>
+                                    @error('name')
+                                    <div class="invalid-feedback">
+                                        {{ $message }}
+                                    </div>
+                                    @enderror
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-floating">
-                                    <input type="email" class="form-control border-0" id="email"
-                                        placeholder="Your Email">
+                                    <input type="email" class="form-control border-0 @error('email') is-invalid @enderror" id="email"
+                                           name="email" placeholder="Your Email" value="{{ old('email') }}">
                                     <label for="email">Your Email</label>
+                                    @error('email')
+                                    <div class="invalid-feedback">
+                                        {{ $message }}
+                                    </div>
+                                    @enderror
                                 </div>
                             </div>
                             <div class="col-12">
                                 <div class="form-floating">
-                                    <input type="text" class="form-control border-0" id="subject"
-                                        placeholder="Subject">
+                                    <input type="text" class="form-control border-0 @error('subject') is-invalid @enderror" id="subject"
+                                           name="subject" placeholder="Subject" value="{{ old('subject') }}">
                                     <label for="subject">Subject</label>
+                                    @error('subject')
+                                    <div class="invalid-feedback">
+                                        {{ $message }}
+                                    </div>
+                                    @enderror
                                 </div>
                             </div>
                             <div class="col-12">
                                 <div class="form-floating">
-                                    <textarea class="form-control border-0" placeholder="Leave a message here" id="message" style="height: 160px"></textarea>
+                                    <textarea class="form-control border-0 @error('msg') is-invalid @enderror" placeholder="Leave a message here"  id="message" name="msg" style="height: 160px">{{ old('msg') }}</textarea>
                                     <label for="message">Message</label>
+                                    @error('msg')
+                                    <div class="invalid-feedback">
+                                        {{ $message }}
+                                    </div>
+                                    @enderror
                                 </div>
                             </div>
                             <div class="col-12">
