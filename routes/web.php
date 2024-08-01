@@ -32,6 +32,7 @@ use App\Http\Controllers\StateController;
 use App\Http\Controllers\StateVideosController;
 use App\Http\Controllers\TeamController;
 use App\Http\Controllers\TestimonialController;
+use App\Http\Controllers\VideoController;
 use App\Http\Requests\StateContentRequest;
 use App\Models\Blog;
 use App\Models\Seo;
@@ -410,6 +411,14 @@ Route::group(['middleware' => ['auth']],function (){
     Route::get('stateVideo/delete/{stateVideo}',[StateVideosController::class,'delete'])->name('stateVideo.delete');
     Route::get('stateVideo/duplicate/{stateVideo}',[StateVideosController::class,'duplicate'])->name('stateVideo.duplicate');
 
+
+    Route::get('video/index',[VideoController::class,'index'])->name('video.index');
+    Route::get('video/create',[VideoController::class,'create'])->name('video.create');
+    Route::post('video/store',[VideoController::class,'store'])->name('video.store');
+    Route::get('video/edit/{video}',[VideoController::class,'edit'])->name('video.edit');
+    Route::post('video/update/{video}',[VideoController::class,'update'])->name('video.update');
+    Route::get('video/delete/{video}',[VideoController::class,'delete'])->name('video.delete');
+    Route::get('video/duplicate/{video}',[VideoController::class,'duplicate'])->name('video.duplicate');
 });
 
 

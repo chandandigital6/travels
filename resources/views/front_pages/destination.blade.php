@@ -22,9 +22,15 @@
             </div>
             <div class="tab-class text-center">
                 <ul class="nav nav-pills d-inline-flex justify-content-center mb-5">
+                    <li class="nav-item">
+                        <a class="d-flex mx-3 py-2 border border-primary bg-light rounded-pill active"
+                           data-bs-toggle="pill" href="#tab-all">
+                            <span class="text-dark" style="width: 150px;">All</span>
+                        </a>
+                    </li>
                     @foreach($destinations as $destination)
                         <li class="nav-item">
-                            <a class="d-flex mx-3 py-2 border border-primary bg-light rounded-pill {{ $loop->first ? 'active' : '' }}"
+                            <a class="d-flex mx-3 py-2 border border-primary bg-light rounded-pill"
                                data-bs-toggle="pill" href="#tab-{{ $destination->id }}">
                                 <span class="text-dark" style="width: 150px;">{{ $destination->name }}</span>
                             </a>
@@ -32,24 +38,45 @@
                     @endforeach
                 </ul>
                 <div class="tab-content">
+                    <!-- All Tab -->
+                    <div id="tab-all" class="tab-pane fade show active p-0">
+                        <div class="row g-4">
+                            @foreach($destinations->flatMap->states as $state)
+                                <div class="col-lg-6">
+                                    <div class="destination-img">
+                                        <img class="img-fluid rounded w-100" src="{{ asset('storage/' . $state->image) }}" alt="">
+                                        <div class="destination-overlay p-4">
+                                            <a href="#" class="btn btn-primary text-white rounded-pill border py-2 px-3">20 Photos</a>
+                                            <h4 class="text-white mb-2 mt-3">{{ $state->title }}</h4>
+                                            <a href="{{ route('destination-details', ['title' => $state->title]) }}" class="btn-hover text-white">View All Place <i class="fa fa-arrow-right ms-2"></i></a>
+                                        </div>
+                                        <div class="search-icon">
+                                            <a href="{{ asset('storage/' . $state->image) }}" data-lightbox="destination-{{ $state->id }}">
+                                                <i class="fa fa-plus-square fa-1x btn btn-light btn-lg-square text-primary"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            @endforeach
+                        </div>
+                    </div>
+                    <!-- Individual Destination Tabs -->
                     @foreach($destinations as $destination)
-                        <div id="tab-{{ $destination->id }}" class="tab-pane fade show p-0 {{ $loop->first ? 'active' : '' }}">
+                        <div id="tab-{{ $destination->id }}" class="tab-pane fade p-0">
                             <div class="row g-4">
                                 @foreach($destination->states as $state)
                                     <div class="col-lg-6">
                                         <div class="destination-img">
                                             <img class="img-fluid rounded w-100" src="{{ asset('storage/' . $state->image) }}" alt="">
                                             <div class="destination-overlay p-4">
-                                                <a href="#"
-                                                   class="btn btn-primary text-white rounded-pill border py-2 px-3">20 Photos</a>
+                                                <a href="#" class="btn btn-primary text-white rounded-pill border py-2 px-3">20 Photos</a>
                                                 <h4 class="text-white mb-2 mt-3">{{ $state->title }}</h4>
-                                                <a href="{{route('destination-details',['title'=>$state->title])}}" class="btn-hover text-white">View All Place <i
-                                                        class="fa fa-arrow-right ms-2"></i></a>
+                                                <a href="{{ route('destination-details', ['title' => $state->title]) }}" class="btn-hover text-white">View All Place <i class="fa fa-arrow-right ms-2"></i></a>
                                             </div>
                                             <div class="search-icon">
-                                                <a href="{{ asset('storage/' . $state->image) }}"
-                                                   data-lightbox="destination-{{ $state->id }}"><i
-                                                        class="fa fa-plus-square fa-1x btn btn-light btn-lg-square text-primary"></i></a>
+                                                <a href="{{ asset('storage/' . $state->image) }}" data-lightbox="destination-{{ $state->id }}">
+                                                    <i class="fa fa-plus-square fa-1x btn btn-light btn-lg-square text-primary"></i>
+                                                </a>
                                             </div>
                                         </div>
                                     </div>
@@ -63,5 +90,6 @@
     </div>
     <!-- Destination End -->
 
-@include('components.newsLater')
+
+    @include('components.newsLater')
 @endsection

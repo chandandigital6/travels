@@ -115,6 +115,13 @@
                 </li>
 
                 <li class="nav-item">
+                    <a href="{{route('video.index')}}" class="nav-link">
+                        <i class="nav-icon fa fa-bug"></i>
+                        <p>Country</p>
+                    </a>
+                </li>
+
+                <li class="nav-item">
                     <a href="{{route('testimonial.index')}}" class="nav-link">
                         <i class="nav-icon fa fa-fax"></i>
                         <p>Testimonials</p>
