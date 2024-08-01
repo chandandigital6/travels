@@ -49,7 +49,7 @@
                                     <th>Title</th>
                                     <th>Image</th>
                                     <th>ResortName</th>
-                                
+
                                     <th>Action</th>
                                 </tr>
                                 </thead>
@@ -58,7 +58,18 @@
                                     <tr>
                                         <td>{{ $resortState->id }}</td>
                                         <td>{{ $resortState->title }}</td>
-                                        <td><img src="{{ asset('storage/'.$resortState->image) }}" alt="{{ $resortState->title }}" style="max-width: 100px;"></td>
+                                        <td>
+                                            @if (is_string($resortState->image) && !empty($resortState->image))
+                                                @php
+                                                    $imagePaths = explode(',', $resortState->image);
+                                                @endphp
+                                                @foreach($imagePaths as $imagePath)
+                                                    <img src="{{ asset('storage/'.$imagePath) }}" alt="{{ $resortState->title }}" style="max-width: 100px;">
+                                                @endforeach
+                                            @endif
+
+                                        </td>
+{{--                                        <td><img src="{{ asset('storage/'.$resortState->image) }}" alt="{{ $resortState->title }}" style="max-width: 100px;"></td>--}}
                                         <td>{{ $resortState->resort->name ?? 'N/A'}}</td>
 {{--                                        <td>{{$resortState->status == 1 ? 'active': "inactive"}}</td>--}}
                                         <td>

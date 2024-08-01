@@ -14,8 +14,7 @@ return new class extends Migration
         Schema::create('resort_states', function (Blueprint $table) {
             $table->id();
             $table->string('title')->nullable();
-            $table->string('image')->nullable();
-//            $table->string('banner')->nullable();
+            $table->text('image')->nullable();
             $table->foreignId('resort_id')->nullable()->constrained('resorts')->onDelete('cascade');
 
             $table->timestamps();

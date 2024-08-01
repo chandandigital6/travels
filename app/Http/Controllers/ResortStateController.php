@@ -26,23 +26,29 @@ class ResortStateController extends Controller
         return view('resortState.create',compact('resorts'));
     }
 
-    public function store(ResortStateRequest $request){
-        // Validate the request data
-        $validatedData = $request->validated();
+    public function store(Request $request){
+        $validatedData = $request->validate([
+            'title' => 'nullable|string|max:255',
+            'image.*' => 'nullable|image',
+            'resort_id' => 'nullable|exists:resorts,id',
+        ]);
 
-        // Handle image uploads
-        $imageFields = ['image'];
+        $resortState = new ResortState();
+        $resortState->title = $validatedData['title'];
 
-        foreach ($imageFields as $field) {
-            if ($request->hasFile($field)) {
-                $imagePath = $request->file($field)->store('public/chose');
-                // Save the image path without 'public/' prefix
-                $validatedData[$field] = str_replace('public/', '', $imagePath);
+        $resortState->resort_id = $validatedData['resort_id'];
+
+        if ($request->hasFile('image')) {
+            $imagePaths = [];
+            foreach ($request->file('image') as $image) {
+                $imagePath = $image->store('public/resortState');
+                $imagePaths[] = str_replace('public/', '', $imagePath);
             }
+            // Convert the array of image paths to a string
+            $resortState->image = implode(',', $imagePaths);
         }
 
-        // Create the About model instance with the validated data
-        ResortState::create($validatedData);
+        $resortState->save();
         return redirect()->route('resortState.index')->with('success', 'ResortState  created successfully.');
     }
 

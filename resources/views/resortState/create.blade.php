@@ -27,13 +27,11 @@
                                 @enderror
                             </div>
                             <div class="form-group">
-                                <label for="image">Image:</label>
-                                <input type="file" class="form-control" id="image" name="image">
-                                @error('image')
-                                <div class="text-danger">{{ $message }}</div>
-                                @enderror
+                                <label for="images">Images</label>
+                                <input type="file" class="form-control file" id="image" name="image[]" multiple>
                             </div>
-{{--                            <div class="form-group">--}}
+
+                            {{--                            <div class="form-group">--}}
 {{--                                <label for="image">Image banner:</label>--}}
 {{--                                <input type="file" class="form-control" id="banner" name="banner">--}}
 {{--                                @error('image')--}}
