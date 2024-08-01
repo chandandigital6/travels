@@ -1,6 +1,38 @@
 @extends('components.main',['seos' => $seos])
 
 @section('content')
+    <style>
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .gallery-item img {
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-content, .gallery-plus-icon {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .gallery-item:hover .gallery-content, .gallery-item:hover .gallery-plus-icon {
+            opacity: 1;
+        }
+
+        .gallery-plus-icon i {
+            font-size: 2rem;
+        }
+
+    </style>
     <div class="container-fluid p-0">
         <!-- Header Section -->
         <div class="position-relative">
@@ -13,10 +45,88 @@
                 <div class="breadcrumb d-flex justify-content-center">
                     <a href="{{ route('home') }}" class="text-white text-decoration-none mx-2">Home</a>
                     <span class="text-white mx-2">/</span>
-                    <a href="{{ route('india') }}" class="text-white text-decoration-none mx-2">Inter national</a>
+                    <a href="{{ route('india') }}" class="text-white text-decoration-none mx-2">Inter National</a>
                 </div>
             </div>
         </div>
+
+        <!-- Destination Start -->
+        <div class="container-fluid destination py-5">
+            <div class="container py-5">
+                <div class="mx-auto text-center mb-5" style="max-width: 900px;">
+                    <h5 class="section-title px-3">Destination</h5>
+                    <h1 class="mb-0">Popular Destination</h1>
+                </div>
+                <div class="tab-class text-center">
+                    <ul class="nav nav-pills d-inline-flex justify-content-center mb-5">
+                        @foreach($resortStates as $resorts)
+                            @if($resorts->name === 'international')
+                                @foreach($resorts->resortStates as $state)
+                                    <li class="nav-item">
+                                        <a class="d-flex mx-3 py-2 border border-primary bg-light rounded-pill {{ $loop->parent->first && $loop->first ? 'active' : '' }}"
+                                           data-bs-toggle="pill" href="#tab-{{ $state->id }}">
+                                            <span class="text-dark" style="width: 150px;">{{ $state->title }}</span>
+                                        </a>
+                                    </li>
+                                @endforeach
+                            @endif
+                        @endforeach
+                    </ul>
+                    <div class="tab-content">
+                        @foreach($resortStates as $resorts)
+                            @if($resorts->name === 'international')
+                                @foreach($resorts->resortStates as $state)
+                                    <div id="tab-{{ $state->id }}" class="tab-pane fade show p-0 {{ $loop->parent->first && $loop->first ? 'active' : '' }}">
+                                        <div class="row g-2">
+                                            @if (is_string($state->image) && !empty($state->image))
+                                                @php
+                                                    $imagePaths = explode(',', $state->image);
+                                                @endphp
+                                                @foreach($imagePaths as $imagePath)
+                                                    <div class="col-12 gallery-item">
+                                                        <div class="h-100">
+                                                            <img src="{{ asset('storage/'.$imagePath) }}" class="img-fluid w-100 rounded" alt="{{ $state->title }}">
+                                                            <div class="gallery-content">
+                                                                <div class="gallery-info">
+                                                                    <h5 class="text-white text-uppercase mb-2">{{ $state->title }}</h5>
+                                                                </div>
+                                                            </div>
+                                                            <div class="gallery-plus-icon">
+                                                                <a href="{{ asset('storage/'.$imagePath) }}" data-lightbox="destination-{{ $state->id }}" class="my-auto">
+                                                                    <i class="fas fa-plus fa-2x text-white"></i>
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                @endforeach
+                                            @endif
+                                        </div>
+                                    </div>
+                                @endforeach
+                            @endif
+                        @endforeach
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Destination End -->
+
+        <!-- Lightbox2 JavaScript -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+
+        <script>
+            document.querySelectorAll('.nav-pills .nav-item a').forEach(tab => {
+                tab.addEventListener('click', function() {
+                    document.querySelectorAll('.nav-pills .nav-item a').forEach(item => {
+                        item.classList.remove('active');
+                    });
+                    this.classList.add('active');
+                });
+            });
+        </script>
+
+
+
 
         {{--        <!-- Destination Start -->--}}
         {{--        <div class="container-fluid destination py-5">--}}
@@ -28,7 +138,7 @@
         {{--                <div class="tab-class text-center">--}}
         {{--                    <ul class="nav nav-pills d-inline-flex justify-content-center mb-5">--}}
         {{--                        @foreach($resortStates as $resorts)--}}
-        {{--                            @if($resorts->name === 'national')--}}
+        {{--                            @if($resorts->name === 'international')--}}
         {{--                                @foreach($resorts->resortStates as $state)--}}
         {{--                                    <li class="nav-item">--}}
         {{--                                        <a class="d-flex mx-3 py-2 border border-primary bg-light rounded-pill {{ $loop->parent->first && $loop->first ? 'active' : '' }}"--}}
@@ -42,26 +152,32 @@
         {{--                    </ul>--}}
         {{--                    <div class="tab-content">--}}
         {{--                        @foreach($resortStates as $resorts)--}}
-        {{--                            @if($resorts->name === 'national')--}}
+        {{--                            @if($resorts->name === 'international')--}}
         {{--                                @foreach($resorts->resortStates as $state)--}}
         {{--                                    <div id="tab-{{ $state->id }}" class="tab-pane fade show p-0 {{ $loop->parent->first && $loop->first ? 'active' : '' }}">--}}
-        {{--                                        <div class="row g-4">--}}
-        {{--                                            <div class="col-lg-6">--}}
-        {{--                                                <div class="destination-img">--}}
-        {{--                                                    <img class="img-fluid rounded w-100" src="{{ asset('storage/' . $state->image) }}" alt="">--}}
-        {{--                                                    <div class="destination-overlay p-4">--}}
-        {{--                                                        <a href="#"--}}
-        {{--                                                           class="btn btn-primary text-white rounded-pill border py-2 px-3">20 Photos</a>--}}
-        {{--                                                        <h4 class="text-white mb-2 mt-3">{{ $state->title }}</h4>--}}
-        {{--                                                        <a href="{{ route('destination-details', ['title'=>$state->title]) }}" class="btn-hover text-white">View All Place <i class="fa fa-arrow-right ms-2"></i></a>--}}
+        {{--                                        <div class="row g-2">--}}
+        {{--                                            @if (is_string($state->image) && !empty($state->image))--}}
+        {{--                                                @php--}}
+        {{--                                                    $imagePaths = explode(',', $state->image);--}}
+        {{--                                                @endphp--}}
+        {{--                                                @foreach($imagePaths as $imagePath)--}}
+        {{--                                                    <div class="col-sm-6 col-md-6 col-lg-4 col-xl-2 gallery-item">--}}
+        {{--                                                        <div class="h-100">--}}
+        {{--                                                            <img src="{{ asset('storage/'.$imagePath) }}" class="img-fluid w-100 h-100 rounded" alt="{{ $state->title }}">--}}
+        {{--                                                            <div class="gallery-content">--}}
+        {{--                                                                <div class="gallery-info">--}}
+        {{--                                                                    <h5 class="text-white text-uppercase mb-2">{{ $state->title }}</h5>--}}
+        {{--                                                                </div>--}}
+        {{--                                                            </div>--}}
+        {{--                                                            <div class="gallery-plus-icon">--}}
+        {{--                                                                <a href="{{ asset('storage/'.$imagePath) }}" data-lightbox="destination-{{ $state->id }}" class="my-auto">--}}
+        {{--                                                                    <i class="fas fa-plus fa-2x text-white"></i>--}}
+        {{--                                                                </a>--}}
+        {{--                                                            </div>--}}
+        {{--                                                        </div>--}}
         {{--                                                    </div>--}}
-        {{--                                                    <div class="search-icon">--}}
-        {{--                                                        <a href="{{ asset('storage/' . $state->image) }}"--}}
-        {{--                                                           data-lightbox="destination-{{ $state->id }}"><i--}}
-        {{--                                                                class="fa fa-plus-square fa-1x btn btn-light btn-lg-square text-primary"></i></a>--}}
-        {{--                                                    </div>--}}
-        {{--                                                </div>--}}
-        {{--                                            </div>--}}
+        {{--                                                @endforeach--}}
+        {{--                                            @endif--}}
         {{--                                        </div>--}}
         {{--                                    </div>--}}
         {{--                                @endforeach--}}
@@ -73,211 +189,71 @@
         {{--        </div>--}}
         {{--        <!-- Destination End -->--}}
 
-        <!-- Destination Start -->
-        <div class="container-fluid destination py-5">
-            <div class="container py-5">
-                <div class="mx-auto text-center mb-5" style="max-width: 900px;">
-                    <h5 class="section-title px-3">Resort</h5>
-                    <h1 class="mb-0">Popular Resort</h1>
-                </div>
-                <div class="tab-class text-center">
-                    <ul class="nav nav-pills d-inline-flex justify-content-center mb-5">
-                        @foreach($resortStates as $resorts)
-                            <li class="nav-item">
-                                <a class="d-flex mx-3 py-2 border border-primary bg-light rounded-pill {{ $loop->first ? 'active' : '' }}"
-                                   data-bs-toggle="pill" href="#tab-{{ $resorts->id }}">
-                                    <span class="text-dark" style="width: 150px;">{{ $resorts->name }}</span>
-                                </a>
-                            </li>
-                        @endforeach
-                    </ul>
-                    <div class="tab-content">
-                        @foreach($resortStates as $resorts)
-                            <div id="tab-{{ $resorts->id }}" class="tab-pane fade show p-0 {{ $loop->first ? 'active' : '' }}">
-                                <div class="row g-4">
-                                    @foreach($resorts->resortStates as $state)
-                                        <div class="col-lg-6">
-                                            <div class="destination-img">
-                                                <img class="img-fluid rounded w-100" src="{{ asset('storage/' . $state->image) }}" alt="">
-                                                <div class="destination-overlay p-4">
-                                                    {{--                                                    <a href="#"--}}
-                                                    {{--                                                       class="btn btn-primary text-white rounded-pill border py-2 px-3">20 Photos</a>--}}
-                                                    <h4 class="text-white mb-2 mt-3">{{ $state->title }}</h4>
-                                                    {{--                                                    <a href="{{route('destination-details',['title'=>$state->title])}}" class="btn-hover text-white">View All Place <i--}}
-                                                    {{--                                                            class="fa fa-arrow-right ms-2"></i></a>--}}
-                                                </div>
-                                                <div class="search-icon">
-                                                    <a href="{{ asset('storage/' . $state->image) }}"
-                                                       data-lightbox="destination-{{ $state->id }}"><i
-                                                            class="fa fa-plus-square fa-1x btn btn-light btn-lg-square text-primary"></i></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    @endforeach
-                                </div>
-                            </div>
-                        @endforeach
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Destination End -->
+        {{--        <script>--}}
+        {{--            document.querySelectorAll('.nav-pills .nav-item a').forEach(tab => {--}}
+        {{--                tab.addEventListener('click', function() {--}}
+        {{--                    document.querySelectorAll('.nav-pills .nav-item a').forEach(item => {--}}
+        {{--                        item.classList.remove('active');--}}
+        {{--                    });--}}
+        {{--                    this.classList.add('active');--}}
+        {{--                });--}}
+        {{--            });--}}
+        {{--        </script>--}}
 
-        <!-- Destination Section -->
-        {{-- <div class="container-fluid destination py-5">
-            <div class="container">
-                <div class="mx-auto text-center mb-5" style="max-width: 900px;">
-                    <h5 class="section-title px-3">Destination</h5>
-                    <h1 class="mb-0">India Destinations</h1>
-                </div>
-                <div class="tab-class text-center">
-                    <div class="tab-content">
-                        <!-- Kashmir Itinerary -->
-                        <div id="tab-2" class="tab-pane fade show active">
-                            <div class="row g-4">
-                                <div class="col-lg-6">
-                                    <div class="destination-img">
-                                        <img class="img-fluid rounded w-100" src="{{ asset('asset/img/kashmir-1.jpg') }}"
-                                            alt="Kashmir Itinerary">
-                                        <div class="destination-overlay p-4">
-                                            <a href="#"
-                                                class="btn btn-primary text-white rounded-pill border py-2 px-3">20
-                                                Photos</a>
-                                            <h4 class="text-white mb-2 mt-3">Kashmir Itinerary</h4>
-                                            <a href="{{ route('kashmir') }}" class="btn-hover text-white">View All Places <i
-                                                    class="fa fa-arrow-right ms-2"></i></a>
-                                        </div>
-                                        <div class="search-icon">
-                                            <a href="{{ asset('asset/img/kashmir-1.jpg') }}" data-lightbox="destination-5">
-                                                <i
-                                                    class="fa fa-plus-square fa-1x btn btn-light btn-lg-square text-primary"></i>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6">
-                                    <div class="destination-img">
-                                        <img class="img-fluid rounded w-100" src="{{ asset('asset/img/Rajasthan-1.jpg') }}"
-                                            alt="Rajasthan Itinerary">
-                                        <div class="destination-overlay p-4">
-                                            <a href="#"
-                                                class="btn btn-primary text-white rounded-pill border py-2 px-3">20
-                                                Photos</a>
-                                            <h4 class="text-white mb-2 mt-3">Rajasthan Itinerary</h4>
-                                            <a href="{{ route('rajasthan') }}" class="btn-hover text-white">View All Places
-                                                <i class="fa fa-arrow-right ms-2"></i></a>
-                                        </div>
-                                        <div class="search-icon">
-                                            <a href="{{ asset('asset/img/Rajasthan-1.jpg') }}"
-                                                data-lightbox="destination-6">
-                                                <i
-                                                    class="fa fa-plus-square fa-1x btn btn-light btn-lg-square text-primary"></i>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- Add more destinations as needed -->
-                            </div>
-                        </div>
-                        <!-- Add more destination tabs as needed -->
-                    </div>
-                </div>
-            </div>
-        </div> --}}
-        <!-- Destination Section End -->
 
-        <!-- Tour Booking Start -->
-        <div class="container-fluid booking py-5">
-            <div class="container py-5">
-                <div class="row g-5 align-items-center">
-                    <div class="col-lg-6">
-                        <h5 class="section-booking-title pe-3">Booking</h5>
-                        <h1 class="text-white mb-4">Online Booking</h1>
-                        <p class="text-white mb-4">Experience seamless travel planning with AC Vacations' Online Reservation Start. Our user-friendly platform allows you to effortlessly browse and book your ideal vacation package from the comfort of your home.
-                        </p>
-                        <p class="text-white mb-4">With real-time availability, secure transactions, and instant confirmations, planning your next adventure has never been easier. Begin your journey today with just a few clicks and let us handle the rest for a hassle-free holiday experience.
-                        </p>
-                        {{--                    <a href="#" class="btn btn-light text-primary rounded-pill py-3 px-5 mt-2">Read More</a>--}}
-                    </div>
-                    <div class="col-lg-6">
-                        <h1 class="text-white mb-3">Book A Tour Deals</h1>
-                        {{--                    <p class="text-white mb-4">Get <span class="text-warning">50% Off</span> On Your First Adventure--}}
-                        {{--                        Trip With. Get More Deal Offers Here.</p>--}}
-                        <form method="post" action="{{route('bookTable.store')}}">
-                            @csrf
-                            <div class="row g-3">
-                                <div class="col-md-6">
-                                    <div class="form-floating">
-                                        <input type="text" class="form-control bg-white border-0" id="name" name="name" placeholder="Your Name">
-                                        <label for="name">Your Name</label>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-floating">
-                                        <input type="email" class="form-control bg-white border-0" id="email" name="email" placeholder="Your Email">
-                                        <label for="email">Your Email</label>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-floating date" id="date3" data-target-input="nearest">
-                                        <input type="datetime-local" class="form-control bg-white border-0" id="datetime" name="date_time" placeholder="Date & Time" data-target="#date3" data-toggle="datetimepicker" />
-                                        <label for="datetime">Date & Time</label>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-floating">
-                                        <input type="text" class="form-control bg-white border-0" id="destination" name="destination" placeholder="Your destination Name">
 
-                                        {{--                                    <select class="form-select bg-white border-0" id="select1" name="destination">--}}
-                                        {{--                                        <option value="Destination 1">Destination 1</option>--}}
-                                        {{--                                        <option value="Destination 2">Destination 2</option>--}}
-                                        {{--                                        <option value="Destination 3">Destination 3</option>--}}
-                                        {{--                                    </select>--}}
-                                        <label for="select1">Destination</label>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-floating">
-                                        <input type="text" class="form-control bg-white border-0" id="person" name="person" placeholder="persons">
 
-                                        {{--                                    <select class="form-select bg-white border-0" id="SelectPerson" name="person">--}}
-                                        {{--                                        <option value="1">Persons 1</option>--}}
-                                        {{--                                        <option value="2">Persons 2</option>--}}
-                                        {{--                                        <option value="3">Persons 3</option>--}}
-                                        {{--                                    </select>--}}
-                                        <label for="SelectPerson">Number of Guests</label>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-floating">
-                                        <input type="text" class="form-control bg-white border-0" id="number" name="number" placeholder="Phone Number">
+        {{--        <!-- Destination Start -->--}}
+        {{--        <div class="container-fluid destination ">--}}
+        {{--            <div class="container py-5">--}}
+        {{--                <div class="mx-auto text-center mb-5" style="max-width: 900px;">--}}
+        {{--                    <h5 class="section-title px-3">Resort</h5>--}}
+        {{--                    <h1 class="mb-0">Popular Resort</h1>--}}
+        {{--                </div>--}}
+        {{--                <div class="tab-class text-center">--}}
+        {{--                    <ul class="nav nav-pills d-inline-flex justify-content-center mb-5">--}}
+        {{--                        @foreach($resortStates as $resorts)--}}
+        {{--                            <li class="nav-item">--}}
+        {{--                                <a class="d-flex mx-3 py-2 border border-primary bg-light rounded-pill {{ $loop->first ? 'active' : '' }}"--}}
+        {{--                                   data-bs-toggle="pill" href="#tab-{{ $resorts->id }}">--}}
+        {{--                                    <span class="text-dark" style="width: 150px;">{{ $resorts->name }}</span>--}}
+        {{--                                </a>--}}
+        {{--                            </li>--}}
+        {{--                        @endforeach--}}
+        {{--                    </ul>--}}
+        {{--                    <div class="tab-content">--}}
+        {{--                        @foreach($resortStates as $resorts)--}}
+        {{--                            <div id="tab-{{ $resorts->id }}" class="tab-pane fade show p-0 {{ $loop->first ? 'active' : '' }}">--}}
+        {{--                                <div class="row g-4">--}}
+        {{--                                    @foreach($resorts->resortStates as $state)--}}
+        {{--                                        <div class="col-lg-6">--}}
+        {{--                                            <div class="destination-img">--}}
+        {{--                                                <img class="img-fluid rounded w-100" src="{{ asset('storage/' . $state->image) }}" alt="">--}}
+        {{--                                                <div class="destination-overlay p-4">--}}
+        {{--                                                    <a href="#"--}}
+        {{--                                                       class="btn btn-primary text-white rounded-pill border py-2 px-3">20 Photos</a>--}}
+        {{--                                                    <h4 class="text-white mb-2 mt-3">{{ $state->title }}</h4>--}}
+        {{--                                                    <a href="{{route('destination-details',['title'=>$state->title])}}" class="btn-hover text-white">View All Place <i--}}
+        {{--                                                            class="fa fa-arrow-right ms-2"></i></a>--}}
+        {{--                                                </div>--}}
+        {{--                                                <div class="search-icon">--}}
+        {{--                                                    <a href="{{ asset('storage/' . $state->image) }}"--}}
+        {{--                                                       data-lightbox="destination-{{ $state->id }}"><i--}}
+        {{--                                                            class="fa fa-plus-square fa-1x btn btn-light btn-lg-square text-primary"></i></a>--}}
+        {{--                                                </div>--}}
+        {{--                                            </div>--}}
+        {{--                                        </div>--}}
+        {{--                                    @endforeach--}}
+        {{--                                </div>--}}
+        {{--                            </div>--}}
+        {{--                        @endforeach--}}
+        {{--                    </div>--}}
+        {{--                </div>--}}
+        {{--            </div>--}}
+        {{--        </div>--}}
+        {{--        <!-- Destination End -->--}}
 
-                                        {{--                                    <select class="form-select bg-white border-0" id="CategoriesSelect" name="categories">--}}
-                                        {{--                                        <option value="Kids">Kids</option>--}}
-                                        {{--                                        <option value="1">1</option>--}}
-                                        {{--                                        <option value="2">2</option>--}}
-                                        {{--                                        <option value="3">3</option>--}}
-                                        {{--                                    </select>--}}
-                                        <label for="CategoriesSelect">Phone Number</label>
-                                    </div>
-                                </div>
-                                <div class="col-12">
-                                    <div class="form-floating">
-                                        <textarea class="form-control bg-white border-0" placeholder="Special Request" id="message" name="msg" style="height: 100px"></textarea>
-                                        <label for="message">Messsage</label>
-                                    </div>
-                                </div>
-                                <div class="col-12">
-                                    <button class="btn btn-primary text-white w-100 py-3" type="submit">Book Now</button>
-                                </div>
-                            </div>
-                        </form>
 
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Tour Booking End -->
 
 
 
