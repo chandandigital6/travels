@@ -56,7 +56,7 @@
                                 <tbody>
                                 @forelse ($resortData as $resort)
                                     <tr>
-                                        <td>{{ $loop->iteration }}</td>
+                                        <td>{{ $resort->id }}</td>
                                         <td>{{ $resort->name }}</td>
 
                                         {{--                                        <td>{!! $resort->description !!}</td>--}}

@@ -57,7 +57,7 @@
                                 <tbody>
                                 @forelse ($stateContentData as $stateContent)
                                     <tr>
-                                        <td>{{ $loop->iteration }}</td>
+                                        <td>{{ $stateContent->id }}</td>
                                         <td>{{ $stateContent->days }}</td>
                                         <td>{{$stateContent->title}}</td>
                                         <td>{!! $stateContent->description !!}</td>
