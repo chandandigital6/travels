@@ -88,6 +88,15 @@ Route::post('/logout', [App\Http\Controllers\LoginController::class, 'logout'])-
 // Country Start
 
 Route::get('/india', [HomeController::class, 'india'])->name('india');
+Route::get('/london', [HomeController::class, 'london'])->name('london');
+Route::get('/italy', [HomeController::class, 'italy'])->name('italy');
+Route::get('/singapore', [HomeController::class, 'singapore'])->name('singapore');
+Route::get('/singapore', [HomeController::class, 'singapore'])->name('singapore');
+Route::get('/vietnam', [HomeController::class, 'vietnam'])->name('vietnam');
+Route::get('/turkey', [HomeController::class, 'turkey'])->name('turkey');
+Route::get('/thailand', [HomeController::class, 'thailand'])->name('thailand');
+
+
 
 //India City Start
 

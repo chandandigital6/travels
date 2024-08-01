@@ -81,6 +81,7 @@
 
                     <div class="card-footer">
                         <!-- Pagination links can be added here if needed -->
+                        {{$destinationData->links()}}
                     </div>
                 </div>
             </div>

@@ -125,6 +125,65 @@ class HomeController extends Controller
     }
 
 
+    public function london()
+    {
+        $destinations = Destination::with('states')->where('name', 'london ')->get();
+//        dd($destinations);
+
+        $seos = Seo::where('page', 'london')->get();
+        $videos=Video::where('title','London')->get();
+        return view('front_pages.london',compact('destinations','seos','videos'));
+    }
+
+    public function italy()
+    {
+        $destinations = Destination::with('states')->where('name', 'italy ')->get();
+//        dd($destinations);
+
+        $seos = Seo::where('page', 'italy')->get();
+        $videos=Video::where('title','italy')->get();
+        return view('front_pages.italy',compact('destinations','seos','videos'));
+    }
+
+    public function singapore()
+    {
+        $destinations = Destination::with('states')->where('name', 'singapore ')->get();
+//        dd($destinations);
+
+        $seos = Seo::where('page', 'singapore')->get();
+        $videos=Video::where('title','singapore')->get();
+        return view('front_pages.singapore',compact('destinations','seos','videos'));
+    }
+
+    public function vietnam()
+    {
+        $destinations = Destination::with('states')->where('name', 'vietnam ')->get();
+//        dd($destinations);
+
+        $seos = Seo::where('page', 'vietnam')->get();
+        $videos=Video::where('title','vietnam')->get();
+        return view('front_pages.vietnam',compact('destinations','seos','videos'));
+    }
+
+    public function turkey()
+    {
+        $destinations = Destination::with('states')->where('name', 'turkey ')->get();
+//        dd($destinations);
+
+        $seos = Seo::where('page', 'turkey')->get();
+        $videos=Video::where('title','turkey')->get();
+        return view('front_pages.turkey',compact('destinations','seos','videos'));
+    }
+
+    public function thailand()
+    {
+        $destinations = Destination::with('states')->where('name', 'thailand ')->get();
+//        dd($destinations);
+
+        $seos = Seo::where('page', 'thailand')->get();
+        $videos=Video::where('title','thailand')->get();
+        return view('front_pages.thailand',compact('destinations','seos','videos'));
+    }
     public function national()
     {
 //        $resortStates = Resort::with('resortStates')->where('name', 'national')->get();

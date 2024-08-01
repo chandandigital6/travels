@@ -81,12 +81,12 @@
                     <div class="dropdown-menu m-0">
 
                         <a href="{{ route('india') }}" class="dropdown-item {{ request()->routeIs('india') ? 'active' : '' }}">India Destinations</a>
-                        <a href="#" class="dropdown-item {{ request()->routeIs('london') ? 'active' : '' }}">London Itinerary</a>
-                        <a href="#" class="dropdown-item {{ request()->routeIs('italy') ? 'active' : '' }}">Italy Itinerary</a>
-                        <a href="#" class="dropdown-item {{ request()->routeIs('singapore') ? 'active' : '' }}">Singapore Itinerary</a>
-                        <a href="#" class="dropdown-item {{ request()->routeIs('vietnam') ? 'active' : '' }}">Vietnam Itinerary</a>
-                        <a href="#" class="dropdown-item {{ request()->routeIs('turkey') ? 'active' : '' }}">Turkey Itinerary</a>
-                        <a href="#" class="dropdown-item {{ request()->routeIs('thailand') ? 'active' : '' }}">Thailand Itinerary</a>
+                        <a href="{{route('london')}}" class="dropdown-item {{ request()->routeIs('london') ? 'active' : '' }}">London Itinerary</a>
+                        <a href="{{route('italy')}}" class="dropdown-item {{ request()->routeIs('italy') ? 'active' : '' }}">Italy Itinerary</a>
+                        <a href="{{route('singapore')}}" class="dropdown-item {{ request()->routeIs('singapore') ? 'active' : '' }}">Singapore Itinerary</a>
+                        <a href="{{route('vietnam')}}" class="dropdown-item {{ request()->routeIs('vietnam') ? 'active' : '' }}">Vietnam Itinerary</a>
+                        <a href="{{route('turkey')}}" class="dropdown-item {{ request()->routeIs('turkey') ? 'active' : '' }}">Turkey Itinerary</a>
+                        <a href="{{route('thailand')}}" class="dropdown-item {{ request()->routeIs('thailand') ? 'active' : '' }}">Thailand Itinerary</a>
                     </div>
                 </div>
                 <div class="nav-item dropdown">
