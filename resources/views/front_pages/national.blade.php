@@ -83,9 +83,9 @@
                                                     $imagePaths = explode(',', $state->image);
                                                 @endphp
                                                 @foreach($imagePaths as $imagePath)
-                                                    <div class="col-sm-6 col-md-6 col-lg-4 col-xl-2 gallery-item">
+                                                    <div class="col-12 gallery-item">
                                                         <div class="h-100">
-                                                            <img src="{{ asset('storage/'.$imagePath) }}" class="img-fluid w-100 h-100 rounded" alt="{{ $state->title }}">
+                                                            <img src="{{ asset('storage/'.$imagePath) }}" class="img-fluid w-100 rounded" alt="{{ $state->title }}">
                                                             <div class="gallery-content">
                                                                 <div class="gallery-info">
                                                                     <h5 class="text-white text-uppercase mb-2">{{ $state->title }}</h5>
@@ -111,6 +111,9 @@
         </div>
         <!-- Destination End -->
 
+        <!-- Lightbox2 JavaScript -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+
         <script>
             document.querySelectorAll('.nav-pills .nav-item a').forEach(tab => {
                 tab.addEventListener('click', function() {
@@ -121,6 +124,81 @@
                 });
             });
         </script>
+
+
+
+
+{{--        <!-- Destination Start -->--}}
+{{--        <div class="container-fluid destination py-5">--}}
+{{--            <div class="container py-5">--}}
+{{--                <div class="mx-auto text-center mb-5" style="max-width: 900px;">--}}
+{{--                    <h5 class="section-title px-3">Destination</h5>--}}
+{{--                    <h1 class="mb-0">Popular Destination</h1>--}}
+{{--                </div>--}}
+{{--                <div class="tab-class text-center">--}}
+{{--                    <ul class="nav nav-pills d-inline-flex justify-content-center mb-5">--}}
+{{--                        @foreach($resortStates as $resorts)--}}
+{{--                            @if($resorts->name === 'national')--}}
+{{--                                @foreach($resorts->resortStates as $state)--}}
+{{--                                    <li class="nav-item">--}}
+{{--                                        <a class="d-flex mx-3 py-2 border border-primary bg-light rounded-pill {{ $loop->parent->first && $loop->first ? 'active' : '' }}"--}}
+{{--                                           data-bs-toggle="pill" href="#tab-{{ $state->id }}">--}}
+{{--                                            <span class="text-dark" style="width: 150px;">{{ $state->title }}</span>--}}
+{{--                                        </a>--}}
+{{--                                    </li>--}}
+{{--                                @endforeach--}}
+{{--                            @endif--}}
+{{--                        @endforeach--}}
+{{--                    </ul>--}}
+{{--                    <div class="tab-content">--}}
+{{--                        @foreach($resortStates as $resorts)--}}
+{{--                            @if($resorts->name === 'national')--}}
+{{--                                @foreach($resorts->resortStates as $state)--}}
+{{--                                    <div id="tab-{{ $state->id }}" class="tab-pane fade show p-0 {{ $loop->parent->first && $loop->first ? 'active' : '' }}">--}}
+{{--                                        <div class="row g-2">--}}
+{{--                                            @if (is_string($state->image) && !empty($state->image))--}}
+{{--                                                @php--}}
+{{--                                                    $imagePaths = explode(',', $state->image);--}}
+{{--                                                @endphp--}}
+{{--                                                @foreach($imagePaths as $imagePath)--}}
+{{--                                                    <div class="col-sm-6 col-md-6 col-lg-4 col-xl-2 gallery-item">--}}
+{{--                                                        <div class="h-100">--}}
+{{--                                                            <img src="{{ asset('storage/'.$imagePath) }}" class="img-fluid w-100 h-100 rounded" alt="{{ $state->title }}">--}}
+{{--                                                            <div class="gallery-content">--}}
+{{--                                                                <div class="gallery-info">--}}
+{{--                                                                    <h5 class="text-white text-uppercase mb-2">{{ $state->title }}</h5>--}}
+{{--                                                                </div>--}}
+{{--                                                            </div>--}}
+{{--                                                            <div class="gallery-plus-icon">--}}
+{{--                                                                <a href="{{ asset('storage/'.$imagePath) }}" data-lightbox="destination-{{ $state->id }}" class="my-auto">--}}
+{{--                                                                    <i class="fas fa-plus fa-2x text-white"></i>--}}
+{{--                                                                </a>--}}
+{{--                                                            </div>--}}
+{{--                                                        </div>--}}
+{{--                                                    </div>--}}
+{{--                                                @endforeach--}}
+{{--                                            @endif--}}
+{{--                                        </div>--}}
+{{--                                    </div>--}}
+{{--                                @endforeach--}}
+{{--                            @endif--}}
+{{--                        @endforeach--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--        <!-- Destination End -->--}}
+
+{{--        <script>--}}
+{{--            document.querySelectorAll('.nav-pills .nav-item a').forEach(tab => {--}}
+{{--                tab.addEventListener('click', function() {--}}
+{{--                    document.querySelectorAll('.nav-pills .nav-item a').forEach(item => {--}}
+{{--                        item.classList.remove('active');--}}
+{{--                    });--}}
+{{--                    this.classList.add('active');--}}
+{{--                });--}}
+{{--            });--}}
+{{--        </script>--}}
 
 
 
