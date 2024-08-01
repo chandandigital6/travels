@@ -34,7 +34,7 @@ class ClientController extends Controller
 
         $logo = new ClientLogo();
         $logo->title = $validatedData['title'];
-        $logo->msg=$validatedData['msg'];
+//        $logo->msg=$validatedData['msg'];
 //        $logo->category_id = $validatedData['category_id'];
 
         if ($request->hasFile('image')) {

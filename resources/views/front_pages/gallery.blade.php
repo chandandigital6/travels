@@ -14,7 +14,7 @@
     <!-- Header End -->
 
     <!-- Gallery Start -->
-    <div class="container-fluid gallery py-5 my-5">
+    <div class="container-fluid gallery my-5">
         <div class="mx-auto text-center mb-5" style="max-width: 900px;">
             <h5 class="section-title px-3">Our Gallery</h5>
             <h1 class="mb-4">Tourism & Traveling Gallery.</h1>

@@ -14,7 +14,7 @@
     <!-- Header End -->
 
     <!-- Services Start -->
-    <div class="container-fluid bg-light service py-5">
+    <div class="container-fluid bg-light service ">
         <div class="container py-5">
             <div class="mx-auto text-center mb-5" style="max-width: 900px;">
                 <h5 class="section-title px-3">Searvices</h5>
@@ -170,11 +170,11 @@
 
 
     <!-- Testimonial Start -->
-    <div class="container-fluid testimonial py-5">
+    <div class="container-fluid testimonial">
         <div class="container py-5">
             <div class="mx-auto text-center mb-5" style="max-width: 900px;">
                 <h5 class="section-title px-3">Testimonial</h5>
-                <h1 class="mb-0">Our Clients Say!!!</h1>
+                <h1 class="mb-0" style="padding-bottom: 20px">Our Clients Say!!!</h1>
             </div>
 
 

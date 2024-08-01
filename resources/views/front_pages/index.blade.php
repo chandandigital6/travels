@@ -132,7 +132,7 @@
     <!-- About End -->
 
     <!-- Services Start -->
-    <div class="container-fluid bg-light service py-5">
+    <div class="container-fluid bg-light service">
         <div class="container py-5">
             <div class="mx-auto text-center mb-5" style="max-width: 900px;">
                 <h5 class="section-title px-3">Searvices</h5>
@@ -277,7 +277,7 @@
 {{--   <!-- Destination End -->--}}
 
    <!-- Destination Start -->
-   <div class="container-fluid destination py-5">
+   <div class="container-fluid destination ">
        <div class="container py-5">
            <div class="mx-auto text-center mb-5" style="max-width: 900px;">
                <h5 class="section-title px-3">Destination</h5>
@@ -374,7 +374,7 @@
 
 
    <!-- Packages Start -->
-    <div class="container-fluid packages py-5">
+    <div class="container-fluid packages">
         <div class="container py-5">
             <div class="mx-auto text-center mb-5" style="max-width: 900px;">
                 <h5 class="section-title px-3">Packages</h5>
@@ -429,7 +429,7 @@
     <!-- Packages End -->
 
     <!-- Gallery Start -->
-    <div class="container-fluid gallery py-5 my-5">
+    <div class="container-fluid gallery  my-5">
         <div class="mx-auto text-center mb-5" style="max-width: 900px;">
             <h5 class="section-title px-3">Our Gallery</h5>
             <h1 class="mb-4">Tourism & Traveling Gallery.</h1>
@@ -619,7 +619,7 @@
 
 
     <!-- Blog Start -->
-    <div class="container-fluid blog py-5">
+    <div class="container-fluid blog ">
         <div class="container py-5">
             <div class="mx-auto text-center mb-5" style="max-width: 900px;">
                 <h5 class="section-title px-3">Our Blog</h5>
@@ -670,11 +670,11 @@
     <!-- Blog End -->
 
    <!-- Testimonial Start -->
-   <div class="container-fluid testimonial py-5">
+   <div class="container-fluid testimonial ">
        <div class="container py-5">
            <div class="mx-auto text-center mb-5" style="max-width: 900px;">
                <h5 class="section-title px-3">Testimonial</h5>
-               <h1 class="mb-0">Our Clients Say!!!</h1>
+               <h1 class="mb-0 " style="padding-bottom: 20px">Our Clients Say!!!</h1>
            </div>
 
            <div class="testimonial-carousel owl-carousel">

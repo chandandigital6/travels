@@ -14,7 +14,7 @@
     <!-- Header End -->
 
     <!-- Packages Start -->
-    <div class="container-fluid packages py-5">
+    <div class="container-fluid packages ">
         <div class="container py-5">
             <div class="mx-auto text-center mb-5" style="max-width: 900px;">
                 <h5 class="section-title px-3">Packages</h5>
