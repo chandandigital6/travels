@@ -40,12 +40,12 @@
                  style="object-fit: cover; height: 80vh;">
             <div class="position-absolute top-50 start-50 translate-middle text-white text-center bg-dark bg-opacity-75 p-4 rounded"
                  style="font-family: 'Roboto', sans-serif;">
-                <h1 class="display-4 text-warning mb-4" style="font-size: 3.5rem;">Inter National <span
+                <h1 class="display-4 text-warning mb-4" style="font-size: 3.5rem;">International <span
                         class="text-warning"></span></h1>
                 <div class="breadcrumb d-flex justify-content-center">
                     <a href="{{ route('home') }}" class="text-white text-decoration-none mx-2">Home</a>
                     <span class="text-white mx-2">/</span>
-                    <a href="{{ route('india') }}" class="text-white text-decoration-none mx-2">Inter National</a>
+                    <a href="{{ route('india') }}" class="text-white text-decoration-none mx-2">International</a>
                 </div>
             </div>
         </div>
