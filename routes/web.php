@@ -65,7 +65,7 @@ Route::get('/booking', [HomeController::class, 'booking'])->name('booking');
 Route::get('/gallery', [HomeController::class, 'gallery'])->name('gallery');
 Route::get('/guides', [HomeController::class, 'guides'])->name('guides');
 Route::get('/testimonial', [HomeController::class, 'testimonial'])->name('testimonial');
-Route::get('/domestic', [HomeController::class, 'national'])->name('national');
+Route::get('/domestic', [HomeController::class, 'national'])->name('domestic');
 Route::get('/international', [HomeController::class, 'international'])->name('international');
 Route::get('/thankYou', [HomeController::class, 'thanks'])->name('thanks');
 Route::get('/page404', [HomeController::class, 'page404'])->name('page404');
