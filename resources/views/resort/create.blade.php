@@ -21,7 +21,7 @@
                             @csrf
 
                             <div class="form-group">
-                                <label for="title">Destination name:</label>
+                                <label for="title">resort:</label>
                                 <input type="text" class="form-control" id="name" name="name" required>
                             </div>
 
