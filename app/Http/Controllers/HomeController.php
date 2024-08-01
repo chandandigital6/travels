@@ -9,6 +9,7 @@ use App\Models\Blog;
 use App\Models\ClientLogo;
 use App\Models\Destination;
 use App\Models\Packages;
+use App\Models\Resort;
 use App\Models\Seo;
 use App\Models\Service;
 use App\Models\State;
@@ -120,6 +121,27 @@ class HomeController extends Controller
         $seos = Seo::where('page', 'destination')->get();
         return view('front_pages.india',compact('destinations','seos'));
     }
+
+
+    public function national()
+    {
+//        $resortStates = Resort::with('resortStates')->where('name', 'national')->get();
+//        dd($resortStates);
+        $resortStates=Resort::with('resortStates')->where('name','national')->get();
+        $seos = Seo::where('page', 'national')->get();
+        return view('front_pages.national', compact('resortStates', 'seos'));
+    }
+
+    public function international()
+    {
+//        $resortStates = Resort::with('resortStates')->where('name', 'national')->get();
+//        dd($resortStates);
+        $resortStates=Resort::with('resortStates')->where('name','international')->get();
+        $seos = Seo::where('page', 'international')->get();
+        return view('front_pages.international', compact('resortStates', 'seos'));
+    }
+
+
 
     public function tour()
     {

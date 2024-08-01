@@ -5,13 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class ServiceChoose extends Model
+class Resort extends Model
 {
     use HasFactory;
     protected $guarded=['id'];
 
-    public function service()
+    public function resortStates()
     {
-        return $this->belongsTo(Service::class);
+        return $this->hasMany(ResortState::class, 'resort_id');
     }
 }

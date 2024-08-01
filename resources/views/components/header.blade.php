@@ -103,9 +103,9 @@
                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Resort</a>
                     <div class="dropdown-menu m-0">
                         {{-- <a href="{{ route('destination') }}" class="dropdown-item">Destination</a> --}}
-                        <a href="{{ route('destination') }}" class="dropdown-item {{ request()->routeIs('india') ? 'active' : '' }}"> National</a>
+                        <a href="{{ route('national') }}" class="dropdown-item {{ request()->routeIs('national') ? 'active' : '' }}"> National</a>
 
-                        <a href="{{ route('gallery') }}" class="dropdown-item {{ request()->routeIs('gallery') ? 'active' : '' }}">InterNational</a>
+                        <a href="{{ route('international') }}" class="dropdown-item {{ request()->routeIs('international') ? 'active' : '' }}">International</a>
 {{--                        <a href="{{ route('testimonial') }}" class="dropdown-item {{ request()->routeIs('testimonial') ? 'active' : '' }}">Testimonial</a>--}}
                     </div>
                 </div>

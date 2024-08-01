@@ -101,6 +101,20 @@
                 </li>
 
                 <li class="nav-item">
+                    <a href="{{route('resort.index')}}" class="nav-link">
+                        <i class="nav-icon fa fa-bug"></i>
+                        <p>Resort</p>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="{{route('resortState.index')}}" class="nav-link">
+                        <i class="nav-icon fa fa-bug"></i>
+                        <p>ResortState</p>
+                    </a>
+                </li>
+
+                <li class="nav-item">
                     <a href="{{route('testimonial.index')}}" class="nav-link">
                         <i class="nav-icon fa fa-fax"></i>
                         <p>Testimonials</p>

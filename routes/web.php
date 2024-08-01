@@ -17,6 +17,8 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PackageController;
 use App\Http\Controllers\PlanCOntroller;
 use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\ResortController;
+use App\Http\Controllers\ResortStateController;
 use App\Http\Controllers\SeoController;
 use App\Http\Controllers\ServiceBeforController;
 use App\Http\Controllers\ServiceChooseController;
@@ -62,6 +64,8 @@ Route::get('/booking', [HomeController::class, 'booking'])->name('booking');
 Route::get('/gallery', [HomeController::class, 'gallery'])->name('gallery');
 Route::get('/guides', [HomeController::class, 'guides'])->name('guides');
 Route::get('/testimonial', [HomeController::class, 'testimonial'])->name('testimonial');
+Route::get('/national', [HomeController::class, 'national'])->name('national');
+Route::get('/international', [HomeController::class, 'international'])->name('international');
 Route::get('/thankYou', [HomeController::class, 'thanks'])->name('thanks');
 Route::get('/page404', [HomeController::class, 'page404'])->name('page404');
 Route::get('/login', [HomeController::class, 'login'])->name('login'); // Login form route
@@ -303,6 +307,26 @@ Route::group(['middleware' => ['auth']],function (){
     Route::get('destination/delete/{destination}',[DestinationController::class,'delete'])->name('destination.delete');
     Route::get('destination/duplicate/{destination}',[DestinationController::class,'duplicate'])->name('destination.duplicate');
 
+
+
+    //destination
+
+    Route::get('resort/index',[ResortController::class,'index'])->name('resort.index');
+    Route::get('resort/create',[ResortController::class,'create'])->name('resort.create');
+    Route::post('resort/store',[ResortController::class,'store'])->name('resort.store');
+    Route::get('resort/edit/{resort}',[ResortController::class,'edit'])->name('resort.edit');
+    Route::post('resort/update/{resort}',[ResortController::class,'update'])->name('resort.update');
+    Route::get('resort/delete/{resort}',[ResortController::class,'delete'])->name('resort.delete');
+    Route::get('resort/duplicate/{resort}',[ResortController::class,'duplicate'])->name('resort.duplicate');
+
+
+    Route::get('resortState/index',[ResortStateController::class,'index'])->name('resortState.index');
+    Route::get('resortState/create',[ResortStateController::class,'create'])->name('resortState.create');
+    Route::post('resortState/store',[ResortStateController::class,'store'])->name('resortState.store');
+    Route::get('resortState/edit/{resortState}',[ResortStateController::class,'edit'])->name('resortState.edit');
+    Route::post('resortState/update/{resortState}',[ResortStateController::class,'update'])->name('resortState.update');
+    Route::get('resortState/delete/{resortState}',[ResortStateController::class,'delete'])->name('resortState.delete');
+    Route::get('resortState/duplicate/{resortState}',[ResortStateController::class,'duplicate'])->name('resortState.duplicate');
 
     //dstination
 
