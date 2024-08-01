@@ -103,7 +103,7 @@
                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Resort</a>
                     <div class="dropdown-menu m-0">
                         {{-- <a href="{{ route('destination') }}" class="dropdown-item">Destination</a> --}}
-                        <a href="{{ route('domestic') }}" class="dropdown-item {{ request()->routeIs('domestic') ? 'active' : '' }}"> National</a>
+                        <a href="{{ route('domestic') }}" class="dropdown-item {{ request()->routeIs('domestic') ? 'active' : '' }}"> Domestic</a>
 
                         <a href="{{ route('international') }}" class="dropdown-item {{ request()->routeIs('international') ? 'active' : '' }}">International</a>
 {{--                        <a href="{{ route('testimonial') }}" class="dropdown-item {{ request()->routeIs('testimonial') ? 'active' : '' }}">Testimonial</a>--}}
