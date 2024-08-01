@@ -18,7 +18,7 @@
         <div class="container py-5">
             <div class="mx-auto text-center mb-5" style="max-width: 900px;">
                 <h5 class="section-title px-3">Packages</h5>
-                <h1 class="mb-0">Awesome Packages</h1>
+                <h1 class="mb-0" style="padding-bottom: 20px">Awesome Packages</h1>
             </div>
             <div class="packages-carousel owl-carousel">
                 @foreach($packages as $package)
