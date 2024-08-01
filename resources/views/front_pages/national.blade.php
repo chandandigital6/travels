@@ -52,7 +52,7 @@
                                                     <div class="destination-overlay p-4">
 {{--                                                        <a href="#"--}}
 {{--                                                           class="btn btn-primary text-white rounded-pill border py-2 px-3">20 Photos</a>--}}
-                                                        <h4 class="text-white mb-2 mt-3">{{ $state->title }}</h4>
+{{--                                                        <h4 class="text-white mb-2 mt-3">{{ $state->title }}</h4>--}}
 {{--                                                        <a href="{{ route('destination-details', ['title'=>$state->title]) }}" class="btn-hover text-white">View All Place <i class="fa fa-arrow-right ms-2"></i></a>--}}
                                                     </div>
                                                     <div class="search-icon">
