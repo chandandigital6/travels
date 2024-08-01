@@ -4,8 +4,12 @@
     <div class="container-fluid p-0">
         <!-- Header Section -->
         <div class="position-relative">
-            <img src="{{ asset('asset/img/india.jpg') }}" class="img-fluid w-100" alt="India Itinerary"
+            @foreach($videos as $v)
+
+
+            <img src="{{ asset('storage/'.$v->image) }}" class="img-fluid w-100" alt="India Itinerary"
                 style="object-fit: cover; height: 80vh;">
+            @endforeach
             <div class="position-absolute top-50 start-50 translate-middle text-white text-center bg-dark bg-opacity-75 p-4 rounded"
                 style="font-family: 'Roboto', sans-serif;">
                 <h1 class="display-4 text-warning mb-4" style="font-size: 3.5rem;">India <span
@@ -234,17 +238,20 @@
         <!-- Video Section -->
         <div class="container-fluid px-0">
             <div class="row g-0 mt-5 mb-5">
+                @foreach($videos as $vi)
                 <div class="col-12 col-md-10 col-lg-12 mx-auto">
-                    <h2 class="text-center mb-4">Watch Our Journey</h2>
+                    <h2 class="text-center mb-4">{{$vi->title}}</h2>
                     <div class="video-container">
                         <div class="ratio ratio-16x9">
-                            <video controls muted class="rounded">
-                                <source src="{{ asset('asset/img/kashmirvideo.mp4') }}" type="video/mp4">
-                                Your browser does not support the video tag.
-                            </video>
+                            @if ($vi->youTubeEmbedUrl)
+                                <iframe width="200" height="113" src="{{ $vi->youTubeEmbedUrl }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            @else
+                                No video available
+                            @endif
                         </div>
                     </div>
                 </div>
+                @endforeach
             </div>
         </div>
         <!-- Video Section End -->

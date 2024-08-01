@@ -16,6 +16,7 @@ use App\Models\State;
 use App\Models\StateContent;
 use App\Models\StateVideo;
 use App\Models\Testimonial;
+use App\Models\Video;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -119,7 +120,8 @@ class HomeController extends Controller
 //        dd($destinations);
 
         $seos = Seo::where('page', 'destination')->get();
-        return view('front_pages.india',compact('destinations','seos'));
+        $videos=Video::where('title','India')->get();
+        return view('front_pages.india',compact('destinations','seos','videos'));
     }
 
 
@@ -129,6 +131,8 @@ class HomeController extends Controller
 //        dd($resortStates);
         $resortStates=Resort::with('resortStates')->where('name','national')->get();
         $seos = Seo::where('page', 'national')->get();
+
+//        dd($videos);
         return view('front_pages.national', compact('resortStates', 'seos'));
     }
 
