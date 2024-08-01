@@ -25,7 +25,7 @@
             </div>
         </div>
         <div class="col-12 col-lg-4 text-center text-lg-end">
-            <div class="d-flex justify-content-center justify-content-lg-end align-items-center flex-wrap" style="min-height: 45px;">
+            <div class="d-flex justify-content-center justify-content-lg-end align-items-center flex-wrap" style="min-height: 30px;">
                 <a href="{{ route('register') }}" class="me-3 text-light mb-2 mb-sm-0"><small><i
                             class="fa fa-user me-2"></i>Register</small></a>
                 <a href="{{ route('login') }}" class="me-3 text-light mb-2 mb-sm-0"><small><i
