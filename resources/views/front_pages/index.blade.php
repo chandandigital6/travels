@@ -75,7 +75,7 @@
 
     <!-- About Start -->
     <div class="container-fluid about">
-        <div class="container py-5">
+        <div class="container ">
              @foreach($abouts as $about)
 
 
