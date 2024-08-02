@@ -23,7 +23,7 @@ class VideoController extends Controller
 
     public function create(){
 
-        return view('video.cre ate');
+        return view('video.create');
     }
 
     public function store(VideoRequest $request){

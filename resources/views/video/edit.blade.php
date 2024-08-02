@@ -29,7 +29,7 @@
                                 <input type="text" class="form-control" id="sub_title" name="sub_title" value="{{ $video->sub_title }}">
                             </div>
                             <div class="form-group">
-                                <label for="image">Image</label>
+                                <label for="image"> main banner</label>
                                 <input type="file" class="form-control-file" id="image" name="image">
                                 @if($video)
                                     <img src="{{asset('storage/'.$video->image)}}" alt="" width="100">

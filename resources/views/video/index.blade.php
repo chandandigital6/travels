@@ -47,8 +47,8 @@
                                 <tr>
                                     <th>ID</th>
                                     <th>page name</th>
-                                    <th>video title</th>
-                                    <th>Image</th>
+                                    <th>video heading</th>
+                                    <th>banner</th>
                                     <th>YouTube URL</th>
 {{--                                    <th>State ID</th>--}}
 
