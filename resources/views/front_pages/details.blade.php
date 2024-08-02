@@ -169,7 +169,9 @@
                     <div class="video-container">
                         <div class="ratio ratio-16x9">
                             @if ($stateVideos->youTubeEmbedUrl)
-                                <iframe width="200" height="113" src="{{ $stateVideos->youTubeEmbedUrl }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                <iframe width="200" height="113" src="{{ $stateVideos->youTubeEmbedUrl }}?autoplay=1&mute=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+{{--                                <iframe width="200" height="113" src="{{ $stateVideos->youTubeEmbedUrl }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>--}}
                             @else
                                 No video available
                             @endif
