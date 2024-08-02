@@ -85,11 +85,11 @@
                         <a href="{{route('hongKong')}}" class="dropdown-item {{ request()->routeIs('hongKong') ? 'active' : '' }}">Hong Kong </a>
                         <a href="{{route('malaysia')}}" class="dropdown-item {{ request()->routeIs('malaysia') ? 'active' : '' }}">Malaysia </a>
                         <a href="{{route('europe')}}" class="dropdown-item {{ request()->routeIs('europe') ? 'active' : '' }}">Europe </a>
-                        <a href="{{route('indonesia')}}" class="dropdown-item {{ request()->routeIs('indonesia') ? 'active' : '' }}">Dubai </a>
-                        <a href="{{route('london')}}" class="dropdown-item {{ request()->routeIs('london') ? 'active' : '' }}">London </a>
-                        <a href="{{route('italy')}}" class="dropdown-item {{ request()->routeIs('italy') ? 'active' : '' }}">Italy </a>
+                        <a href="{{route('indonesia')}}" class="dropdown-item {{ request()->routeIs('indonesia') ? 'active' : '' }}">Indonesia </a>
+{{--                        <a href="{{route('london')}}" class="dropdown-item {{ request()->routeIs('london') ? 'active' : '' }}">London </a>--}}
+{{--                        <a href="{{route('italy')}}" class="dropdown-item {{ request()->routeIs('italy') ? 'active' : '' }}">Italy </a>--}}
                         <a href="{{route('singapore')}}" class="dropdown-item {{ request()->routeIs('singapore') ? 'active' : '' }}">Singapore </a>
-                        <a href="{{route('vietnam')}}" class="dropdown-item {{ request()->routeIs('vietnam') ? 'active' : '' }}">Vietnam </a>
+{{--                        <a href="{{route('vietnam')}}" class="dropdown-item {{ request()->routeIs('vietnam') ? 'active' : '' }}">Vietnam </a>--}}
                         <a href="{{route('turkey')}}" class="dropdown-item {{ request()->routeIs('turkey') ? 'active' : '' }}">Turkey </a>
                         <a href="{{route('thailand')}}" class="dropdown-item {{ request()->routeIs('thailand') ? 'active' : '' }}">Thailand </a>
                     </div>
