@@ -184,6 +184,58 @@ class HomeController extends Controller
         $videos=Video::where('title','thailand')->get();
         return view('front_pages.thailand',compact('destinations','seos','videos'));
     }
+
+    public function dubai()
+    {
+        $destinations = Destination::with('states')->where('name', 'dubai ')->get();
+//        dd($destinations);
+
+        $seos = Seo::where('page', 'dubai')->get();
+        $videos=Video::where('title','dubai')->get();
+        return view('front_pages.dubai',compact('destinations','seos','videos'));
+    }
+
+    public function hongKong()
+    {
+        $destinations = Destination::with('states')->where('name', 'hong Kong ')->get();
+//        dd($destinations);
+
+        $seos = Seo::where('page', 'hongKong')->get();
+        $videos=Video::where('title','hong Kong')->get();
+        return view('front_pages.hongKong',compact('destinations','seos','videos'));
+    }
+
+    public function malaysia()
+    {
+        $destinations = Destination::with('states')->where('name', 'malaysia ')->get();
+//        dd($destinations);
+
+        $seos = Seo::where('page', 'malaysia')->get();
+        $videos=Video::where('title','malaysia')->get();
+        return view('front_pages.malaysia',compact('destinations','seos','videos'));
+    }
+
+    public function europe()
+    {
+        $destinations = Destination::with('states')->where('name', 'europe ')->get();
+//        dd($destinations);
+
+        $seos = Seo::where('page', 'europe')->get();
+        $videos=Video::where('title','europe')->get();
+        return view('front_pages.europe',compact('destinations','seos','videos'));
+    }
+
+    public function indonesia()
+    {
+        $destinations = Destination::with('states')->where('name', 'indonesia ')->get();
+//        dd($destinations);
+
+        $seos = Seo::where('page', 'indonesia')->get();
+        $videos=Video::where('title','indonesia')->get();
+        return view('front_pages.indonesia',compact('destinations','seos','videos'));
+    }
+
+
     public function national()
     {
 //        $resortStates = Resort::with('resortStates')->where('name', 'national')->get();

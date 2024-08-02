@@ -13,7 +13,7 @@
             <div class="position-absolute top-50 start-50 translate-middle text-white text-center bg-dark bg-opacity-75 p-4 rounded"
                 style="font-family: 'Roboto', sans-serif;">
                 <h1 class="display-4 text-warning mb-4" style="font-size: 3.5rem;">India <span
-                        class="text-warning">Itinerary</span></h1>
+                        class="text-warning"></span></h1>
                 <div class="breadcrumb d-flex justify-content-center">
                     <a href="{{ route('home') }}" class="text-white text-decoration-none mx-2">Home</a>
                     <span class="text-white mx-2">/</span>

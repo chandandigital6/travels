@@ -91,13 +91,15 @@ Route::get('/india', [HomeController::class, 'india'])->name('india');
 Route::get('/london', [HomeController::class, 'london'])->name('london');
 Route::get('/italy', [HomeController::class, 'italy'])->name('italy');
 Route::get('/singapore', [HomeController::class, 'singapore'])->name('singapore');
-Route::get('/singapore', [HomeController::class, 'singapore'])->name('singapore');
+//Route::get('/singapore', [HomeController::class, 'singapore'])->name('singapore');
 Route::get('/vietnam', [HomeController::class, 'vietnam'])->name('vietnam');
 Route::get('/turkey', [HomeController::class, 'turkey'])->name('turkey');
 Route::get('/thailand', [HomeController::class, 'thailand'])->name('thailand');
-
-
-
+Route::get('/dubai', [HomeController::class, 'dubai'])->name('dubai');
+Route::get('/hongKong', [HomeController::class, 'hongKong'])->name('hongKong');
+Route::get('/malaysia', [HomeController::class, 'malaysia'])->name('malaysia');
+Route::get('/europe', [HomeController::class, 'europe'])->name('europe');
+Route::get('/indonesia', [HomeController::class, 'indonesia'])->name('indonesia');
 //India City Start
 
 Route::get('/kashmir', [HomeController::class, 'kashmir'])->name('kashmir');
