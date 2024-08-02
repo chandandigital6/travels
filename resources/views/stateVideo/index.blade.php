@@ -46,7 +46,7 @@
                                 <thead>
                                 <tr>
                                     <th>ID</th>
-                                    <th>Title</th>
+                                    <th>video heading</th>
                                     <th>Image</th>
                                     <th>YouTube URL</th>
                                     <th>State ID</th>

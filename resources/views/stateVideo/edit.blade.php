@@ -20,11 +20,11 @@
                         <form action="{{route('stateVideo.update',$stateVideo->id)}}" method="POST" enctype="multipart/form-data">
                             @csrf
                             <div class="form-group">
-                                <label for="title">Title</label>
+                                <label for="title">Video Heading</label>
                                 <input type="text" class="form-control" id="title" name="title" value="{{ $stateVideo->title }}">
                             </div>
                             <div class="form-group">
-                                <label for="image">Image</label>
+                                <label for="image">State Sub Banner</label>
                                 <input type="file" class="form-control-file" id="image" name="image">
                                 @if($stateVideo)
                                     <img src="{{asset('storage/'.$stateVideo->image)}}" alt="" width="100">
