@@ -35,7 +35,7 @@
                                 @enderror
                             </div>
                             <div class="form-group">
-                                <label for="image">State Sub Banner:</label>
+                                <label for="image">State main Banner:</label>
                                 <input type="file" class="form-control" id="banner" name="banner">
                                 @error('image')
                                 <div class="text-danger">{{ $message }}</div>
