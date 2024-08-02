@@ -20,7 +20,7 @@
                         <form action="{{route('state.update',$state->id)}}" method="POST" enctype="multipart/form-data">
                             @csrf
                             <div class="form-group">
-                                <label for="title">Title:</label>
+                                <label for="title">State name:</label>
                                 <input type="text" class="form-control" id="title" name="title" value="{{ old('title', $state->title) }}">
                                 @error('title')
                                 <div class="text-danger">{{ $message }}</div>
