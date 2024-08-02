@@ -142,7 +142,7 @@ Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 
 
 Route::get('login-form',[AuthController::class,'index'])->name('login-form');
-Route::get('registration',[AuthController::class,'registration'])->name('registration');
+Route::get('/avvacation/registration',[AuthController::class,'registration'])->name('registration');
 //Route::post('store', [AuthController::class, 'store'])->name('auth.store');
 Route::post('auth-store', [AuthController::class, 'store'])->name('auth-store');
 Route::post('login',[AuthController::class,'login'])->name('auth.login');
