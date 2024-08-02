@@ -240,7 +240,7 @@
             <div class="row g-0 mt-5 mb-5">
                 @foreach($videos as $vi)
                     <div class="col-12 col-md-10 col-lg-12 mx-auto">
-                        <h2 class="text-center mb-4">{{$vi->title}}</h2>
+                        <h2 class="text-center mb-4">{{$vi->sub_title}}</h2>
                         <div class="video-container">
                             <div class="ratio ratio-16x9">
                                 @if ($vi->youTubeEmbedUrl)

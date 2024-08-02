@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('videos', function (Blueprint $table) {
             $table->id();
             $table->string('title')->nullable();
+            $table->string('sub_title')->nullable();
             $table->string('image')->nullable();
             $table->string('youTube_url')->nullable();
             $table->timestamps();

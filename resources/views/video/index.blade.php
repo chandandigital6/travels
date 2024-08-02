@@ -47,6 +47,7 @@
                                 <tr>
                                     <th>ID</th>
                                     <th>Title</th>
+                                    <th>video title</th>
                                     <th>Image</th>
                                     <th>YouTube URL</th>
 {{--                                    <th>State ID</th>--}}
@@ -59,6 +60,7 @@
                                     <tr>
                                         <td>{{ $video->id }}</td>
                                         <td>{{ $video->title }}</td>
+                                        <td>{{ $video->sub_title }}</td>
                                         <td><img src="{{ asset('storage/'.$video->image) }}" alt="{{ $video->title }}" style="max-width: 100px;"></td>
                                         <td>
                                             @if ($video->youTubeEmbedUrl)

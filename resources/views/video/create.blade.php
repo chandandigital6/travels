@@ -20,8 +20,12 @@
                         <form action="{{route('video.store')}}" method="POST" enctype="multipart/form-data">
                             @csrf
                             <div class="form-group">
-                                <label for="title">Title</label>
+                                <label for="title">page title</label>
                                 <input type="text" class="form-control" id="title" name="title" value="{{ old('title') }}">
+                            </div>
+                            <div class="form-group">
+                                <label for="title">video title</label>
+                                <input type="text" class="form-control" id="sub_title" name="sub_title" value="{{ old('title') }}">
                             </div>
                             <div class="form-group">
                                 <label for="image">Image</label>
