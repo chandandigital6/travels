@@ -46,8 +46,8 @@
                                 <thead>
                                 <tr>
                                     <th>ID</th>
-                                    <th>Title</th>
-                                    <th>Image</th>
+                                    <th>state name</th>
+                                    <th>home thumbnail</th>
                                     <th>Destination</th>
                                     <th>Status</th>
                                     <th>Action</th>

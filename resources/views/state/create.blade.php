@@ -27,14 +27,14 @@
                                 @enderror
                             </div>
                             <div class="form-group">
-                                <label for="image">Image:</label>
+                                <label for="image">Home thumbnail:</label>
                                 <input type="file" class="form-control" id="image" name="image">
                                 @error('image')
                                 <div class="text-danger">{{ $message }}</div>
                                 @enderror
                             </div>
                             <div class="form-group">
-                                <label for="image">Image banner:</label>
+                                <label for="image">State sub banner:</label>
                                 <input type="file" class="form-control" id="banner" name="banner">
                                 @error('image')
                                 <div class="text-danger">{{ $message }}</div>
