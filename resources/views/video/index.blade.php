@@ -46,7 +46,7 @@
                                 <thead>
                                 <tr>
                                     <th>ID</th>
-                                    <th>Title</th>
+                                    <th>page title</th>
                                     <th>video title</th>
                                     <th>Image</th>
                                     <th>YouTube URL</th>

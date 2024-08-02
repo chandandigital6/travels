@@ -20,7 +20,7 @@
                         <form action="{{route('video.update',$video->id)}}" method="POST" enctype="multipart/form-data">
                             @csrf
                             <div class="form-group">
-                                <label for="title">Title</label>
+                                <label for="title">page title</label>
                                 <input type="text" class="form-control" id="title" name="title" value="{{ $video->title }}">
                             </div>
 
